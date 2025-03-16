@@ -475,8 +475,22 @@ iframe[src*="youtu"] {
 }
 
 
+.workspace-tab-header-new-tab {
+    padding: 0px;
+    margin-inline-end: 0px;
+    margin-inline-start: 0px;
+}
 
+.workspace-tab-header-new-tab .clickable-icon {
+    margin-left: -25px;
+    margin-top: 10px;
+    --icon-size: var(--icon-s);
+    align-items: center;
+}
 
+.workspace .mod-root .workspace-tab-header-inner::after {
+    background: none;
+    }
 
 /* Universal Code Block Styling */
 code, pre {

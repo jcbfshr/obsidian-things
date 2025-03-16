@@ -330,6 +330,11 @@ body.is-phone {
     color: var(--accent-color);
 }
 
+.empty-state-action {
+    color: var(--text-normal);
+}
+
+
 /* 🔗 Link Enhancements */
 /* === General Link Styling for All Modes === */
 .internal-link,
@@ -461,7 +466,6 @@ mark .external-link,
     text-transform: none !important; /* Remove uppercase if applied */
 }
 
-
 /* ================== */
 /*  📌 Other Changes  */
 /* ================== */
@@ -469,7 +473,6 @@ mark .external-link,
 body {
     --checklist-done-decoration: none;
 }
-
 
 .markdown-embed-title {
   display: none;

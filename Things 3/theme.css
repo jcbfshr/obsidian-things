@@ -257,6 +257,13 @@ body.is-mobile .menu-item-icon {
     font-weight: 600;
 }
 
+@media (hover: none) and (pointer: coarse) {
+    .theme-dark input.prompt-input {
+        background-color: #434a54 !important;
+        color: #9ba1ab !important;
+    }
+}
+
 .nav-files-container {
     box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.01);
     }
@@ -473,7 +480,6 @@ iframe[src*="youtu"] {
     width: 100%;
     border-radius: 6px;
 }
-
 
 .workspace-tab-header-new-tab {
     padding: 0px;

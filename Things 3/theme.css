@@ -1,0 +1,541 @@
+:root, body {
+    --tab-curve: 0px;
+    --color-accent: #67acff !important;
+    --interactive-accent: #67acff;
+    --color-yellow: #fdd31b !important;
+    --color-red: #ff5383 !important;
+    --color-cyan: #54ada4 !important;
+    --color-blue: #23abf2 !important;
+    --color-grey: #6a6a6a !important;
+    --anim-motion-jumpy: cubic-bezier(.45,.56,.73,1.24);
+}
+
+.workspace-tab-header {
+    transition: background-color 0.2s ease;
+    color: var(--normal-text);
+    margin-top: 5px;
+}
+
+.view-header {
+    transition: background-color 0.2s ease;
+    color: var(--normal-text);
+    margin-top: 15px;
+}
+
+.workspace-tab-header-container-inner {
+    margin: 3px 15px calc(var(--tab-outline-width)* -1);
+    padding: 0px 0px 0;
+}
+
+/* Quick Switcher */
+
+.prompt {
+    box-shadow: 0 0px 12px rgba(0, 0, 0, 0.4);
+}
+
+.prompt {    
+    animation: zoom-in 0.1s linear !important;
+    transform-origin: top center;
+}
+
+@keyframes zoom-in {
+    from {
+        transform: scale(0.90);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .prompt {  
+        animation: zoom-in 0.2s
+        var(--anim-motion-jumpy) !important;
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5) !important;
+        width: 90%;
+    }
+}
+
+body.is-phone .prompt {
+    border-radius: 16px;
+    background-color: var(--modal-background) !important;
+    width: 95vw;
+    height: 70vh;
+}
+
+.theme-dark .suggestion-item.is-selected {
+    background-color: #67acff !important;
+    color: var(--text-on-accent) !important;
+}
+
+.theme-light .suggestion-item.is-selected {
+    background-color: #c3d8ff !important;
+    color: var(--text-on-accent) !important;
+}
+
+
+.workspace-tab-header:hover {
+    transition: background-color 0.2s ease;
+    color: var(--normal-text);
+}
+
+.workspace-tab-header.is-active {
+    transition: background-color 0.2s ease;
+    box-shadow: 0 0px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Making Things 3-like Tags */
+
+@font-face {
+
+font-family: 'Formular';
+
+src: url('data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAXMAA4AAAAACOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABHREVGAAAFZAAAABYAAAAWABMABkdQT1MAAAV8AAAAIAAAACBEdkx1R1NVQgAABZwAAAAvAAAAMCN+JIxPUy8yAAACDAAAAEcAAABgII84HWNtYXAAAAJUAAAAMQAAADwAOwB9Z2FzcAAABVwAAAAIAAAACP//AANnbHlmAAABRAAAACgAAAAoKX11F2hlYWQAAAGcAAAANgAAADYW4dEnaGhlYQAAAewAAAAgAAAAJA/2Cc9obXR4AAAB1AAAABgAAAAYDeYAd2xvY2EAAAGMAAAADQAAAA4APAA8bWF4cAAAAWwAAAAeAAAAIABLAEVuYW1lAAACiAAAAq4AAAXocAf8uHBvc3QAAAU4AAAAJAAAADNVXVC5AAIAdwAAA8MFtgADAAcAADMRIRElIREhdwNM/T8CNf3LBbb6SoEEtHjaY2BkYGBgY3BiYGYAASYgZmQAiTmA+QwACZIAkQAAeNpjYGAQQUAAAt4AeQAAAAABAAAAAgCDDlp/b18PPPUACwgAAAAAAM8sf4QAAAAA4KMGkP+m/lgITAc7AAAACAACAAAAAAAABDkAdwAAAAACqgAAAAAAAAI5AAAEygAAeNpjYGRgYLP8Z8l4krv//zIGBg4fBqAICmADAH24BNx42mNgZrnJOIGBlYGB1ZjlLAMDwywIzXSWIY0pC0gzIAFGBnTgwKDAoMxm+c+S8ST7XcY3CgwM08EKfzCdAlIKDEwAU4UM+QB42mNgYGBiYGBgBmIRIMkIplkYNIA0G5BmBMoqMCj//w/kg+n/T/4/AqsCAgCI4wiyAAAAeNqtUrtu1EAUvfZu3g/RISGERqJJpMReVkFityKJlBSRUEgRiXJsjx+s12ONZ9dxw5/QUFJS8QF8AZ9CS8Px7CRrIJEosOWZc1/nnrkeInrmFOTQ4nmHb4EdWoe1wC6tEbe4Ry8ptbjfyVmhHfpo8WrHv0Zv6bPF67RHPy3e6ODNTt8teuw8t3i7g3dozxlbvEtPnQBKnP4GrC/OB4sdeuQOLHZp131tcY/eu28s7ndyVuiJ+9Xi1Y5/jT653y1ep8uetnijgzc7fbfI632zeLuDd5D/w+JdetU/OZVlo7Ik1Wwv3GfDwYujQywjFjTsnDe8EOyEJxGvuIJxwK4bHqaiyvmcXWQqy0UxkR47znNmSCqmRCXUXETemVTTWc7VlUjabUHW5VpS3TGN2W3VuJUyuhaqymTBht5gMLzMBa8EGsRCMS2ZTgVbqq9EqNvUWCoTiWWhmVY8ElOuJoxrrbJgZlIKqbNQVN6/ni/Vuhz7fl3XXqBkXcTyxpMqOS4aNoOgOtOpnGlWCjXNKqM3q1ipZJoFmRaRLe+W+jkEFKHw6ZQkldSQoowS3GJNDLcwpH3sQxrQCzqiQ4tG8AXIZXSOu9/gK0jAOgFKKMJa4VM2coDItcEheAViOfAc3gv0avvl8BY0gQIP3mPYOfalkspYbaXAPscaIfMM+YqmNDN8iq7gT+6srrKHdN2n6m9NY3T/s9f4biojsLSqKtRIVLR+D5EB9kvDwo3uxQlik8twJmnW1ETum31bEwLdssZGwbImNn5tPAo9IninRtsEPg6vNnwBNC9ZCuytFZoTe//9/6Wmb4n5+Hhr83rQoBCrkdOqvoGnPUuCP12YWzSzE6rB1Z5PGs0MPMJMPUN8Od/M3IfScKbmhG1Veyd+7/5QVx96FxMozOr/AnWqLjEAAHjaY2BiAIP/DAxpDNgAGxAzMjAxMjEwM7Cx+IX6+AAAP3gCvAAAAAH//wACAAEAAAAMAAAAAAAAAAIAAQADAAUAAQAAAAEAAAAKABwAHgABREZMVAAIAAQAAAAA//8AAAAAAAB42mNgZGBg4GLQYdBjYHZx8wlhEEmuLMphkMtJLMljkGNgAcoy/P/PAAcArlkHTgA=') format('woff');
+
+}
+
+.theme-dark a.tag {
+    color: #f1f1f1 !important;
+    font-weight: 600;
+    background-color: #2f7155 !important;
+    border: none !important;
+    text-decoration: none !important;
+    font-family: 'Formular', var(--font-text);
+    padding: 5px 0.6em 3px 0;
+}
+
+.theme-light a.tag {
+    color: #1e7d58 !important;
+    font-weight: 600;
+    background-color: #c3e1d3 !important;
+    border: none !important;
+    text-decoration: none !important;
+    font-family: 'Formular', var(--font-text);
+    padding: 5px 0.6em 3px 0;
+}
+
+.theme-dark span.cm-hashtag {
+    color: #f1f1f1 !important;
+    font-weight: 600;
+    background-color: #2f7155 !important;
+    border: none !important;
+    text-decoration: none !important;
+}
+
+.theme-light span.cm-hashtag {
+    color: #1e7d58 !important;
+    font-weight: 600;
+    background-color: #c3e1d3 !important;
+    border: none !important;
+    text-decoration: none !important;
+}
+
+/* prevent overlapping tags on separate lines */
+
+p:has(.tag ~ br ~ .tag) {
+line-height: 1;
+}
+
+.cm-line:has(.cm-meta):has(+.cm-line .cm-meta) {
+padding-bottom: 5px;
+}
+
+
+/* 🌙 DARK MODE */
+.theme-dark {
+    --accent-color: #67acff;
+    --interactive-accent-hover: #3e3e3e;
+    --background-primary: #262626;
+    --background-primary-alt: #2f2f2f;
+    --background-secondary: #1f1f1f;
+    --background-modifier-border: rgba(0, 0, 0, 0.2);
+    --titlebar-background-focused: #1c1c1c;
+    --titlebar-background: #212121;
+    --text-accent: ##1f1f1f;
+    --text-on-accent: #1f1f1f;
+}
+
+.theme-dark .workspace-tab-header-container,
+.theme-dark .workspace-split,
+.theme-dark .workspace-leaf {
+    background-color: var(--titlebar-background-focused);
+    transition: background-color 0.2s ease;
+    border: 0px !important;
+    border-radius: 0px !important;
+}
+
+.theme-dark strong,
+.theme-dark b,
+.theme-dark .cm-strong,
+.theme-dark .markdown-preview-view strong {
+    color: #ffffff !important;
+}
+
+.theme-dark .iconize-icon {
+    color: var(--color-grey) !important;
+}
+
+/* 🌙 FULL BLACK BACKGROUND FOR MOBILE DEVICES */
+@media (hover: none) and (pointer: coarse) {
+    .theme-dark {
+        --background-primary: #000000 !important;
+        --background-secondary: #000000 !important;
+        --background-secondary-alt: #2b3138 !important;
+        --titlebar-background-focused: #000000 !important;
+        --dropdown-background: #2b3138 !important;
+        --modal-background: #2b3138 !important;
+        --popup-backgroun: #2b3138 !important;
+    }
+}
+
+
+body.is-mobile .menu {
+    width: 85%;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    padding-bottom: 5px;
+    margin-bottom: 50px;
+}
+
+body.is-mobile .menu-item {
+    outline: none;
+    border-radius: 0 !important;
+    font-size: 1.1em !important;
+}
+
+
+body.is-mobile .menu-item-icon {
+    color: var(--accent-color);
+}
+
+
+/* ☀️ LIGHT MODE */
+.theme-light {
+    --accent-color: #0062c1;
+    --background-primary: #ffffff; 
+    --background-secondary: #f9fafb;
+    --titlebar-background-focused: #f9fafb;
+    --titlebar-background: #f9fafb;
+    --text-normal: #121417;
+    --text-muted: #3e3e3e;
+    --text-on-accent: #ffffff;
+    --menu-background: #272d35;
+    --background-modifier-border: rgba(128, 128, 128, 0.05);
+}
+
+.theme-light .iconize-icon {
+    color: var(--color-red) !important;
+}
+
+
+.theme-light .prompt {
+    background-color: #f5f6f8;
+}
+
+.theme-light input.prompt-input:hover,
+.theme-light input.prompt-input:focus,
+.theme-light input.prompt-input:focus-visible,
+.theme-light input.prompt-input {
+    background-color: #dbdde4;
+    padding: 16px 16px;
+    margin: 10px;
+    border-radius: 6px;
+    border-bottom: none;
+    font-weight: 500;
+}
+
+.theme-dark input.prompt-input:hover,
+.theme-dark input.prompt-input:focus,
+.theme-dark input.prompt-input:focus-visible,
+.theme-dark input.prompt-input {
+    background-color: #515151;
+    padding: 16px 16px;
+    margin: 10px;
+    border-radius: 6px;
+    border-bottom: none;
+    color: #989ea8;
+    font-weight: 600;
+}
+
+.nav-files-container {
+    box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.01);
+    }
+
+.nav-file, .nav-folder {
+    padding: 1px 10px;
+    font-weight: 600;
+}
+
+.nav-file.is-active, .nav-folder.is-active, .nav-file-title.is-active, .nav-folder-title.is-active {
+    .theme-dark background-color: #38383a;
+    .theme-dark color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+.nav-file-title:hover, .nav-folder-title:hover {
+    background-color: var(--background-secondary);
+}
+
+/* 🏆 Improved Performance - Reduce Blur for Mobile */
+@media (hover: none) and (pointer: coarse) {
+    .modal-container {
+        backdrop-filter: none !important;
+    }
+}
+
+body.is-phone {
+    --mobile-sidebar-width: 100%;
+}
+
+.view-header-breadcrumb {
+        color: var(--accent-color);
+        font-weight: 600;
+}
+
+.clickable-icon.is-active {
+    opacity: var(--icon-opacity-hover);
+    color: var(--accent-color);
+}
+
+/* Tab Switcher */
+.menu, .mobile-tab-switcher {
+    animation: slide-in 0.15s 
+    var(--anim-motion-jumpy);
+    transform-origin: bottom right;
+}
+
+@keyframes slide-in {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .menu, .workspace-leaf {
+        animation: none !important;
+    }
+}
+
+/* 🔗 Link Enhancements */
+/* === General Link Styling for All Modes === */
+.internal-link,
+.external-link,
+.cm-link,
+.cm-url,
+.cm-s-obsidian span.cm-hmd-internal-link,
+.cm-s-obsidian span.cm-hmd-external-link,
+.cm-s-obsidian .cm-link,
+.cm-s-obsidian a {
+    color: var(--accent-color) !important;
+    text-decoration: none !important;
+    caret-color: var(--accent-color) !important;
+}
+
+/* === Hover State - Remove Underline */
+a:hover, 
+.internal-link:hover, 
+.external-link:hover, 
+.cm-link:hover, 
+.cm-url:hover,
+.cm-s-obsidian span.cm-hmd-internal-link:hover,
+.cm-s-obsidian span.cm-hmd-external-link:hover {
+    text-decoration: none !important;
+}
+
+/* === Focused Links (e.g., when tabbing) === */
+a:focus, 
+.internal-link:focus, 
+.external-link:focus {
+    outline: none !important;
+    text-decoration: none !important;
+}
+
+.theme-dark ::selection {
+    background: #2260b0 !important;
+    color: var(--normal-text) !important;
+}
+
+.theme-light ::selection {
+    background: #c3d7ff !important;
+    color: var(--normal-text) !important;
+}
+
+.nav-folder-children {
+    transition: height 0.35s ease-in-out;
+    border-left: none
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .nav-folder-children {
+        transition: none !important;
+    }
+}
+
+/* ====================== */
+/*      📌 HIGHLIGHT      */
+/* ====================== */
+.markdown-preview-view mark,
+.cm-s-obsidian span.cm-highlight {
+    .theme-dark background-color: #726630 !important;
+    .theme-dark color: #ffffff !important;
+    padding: 2px 4px !important;
+    border-radius: 3px !important;
+}
+
+/* 🖱️ Adjust highlighted links (Make them stand out) */
+mark a, 
+mark .internal-link, 
+mark .external-link, 
+.cm-s-obsidian span.cm-highlight a {
+    color: #ffffff !important; 
+}
+
+/* ============ */
+/* 📌 Headings  */
+/* ============ */
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6,
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    margin-top: 0px;
+    font-weight: 500;
+    .theme-dark color: #ffffff !important;
+    .theme-light color: #000000 !important;
+}
+
+@media print {
+    h1, h2, h3, h4, h5, h6 {
+        padding-bottom: 10px !important;
+    }
+}
+
+.markdown-preview-view hr,
+.markdown-source-view hr, .markdown-source-view.mod-cm6 .cm-hr {
+    border: none;
+    height: 1px;
+    background-color: rgba(128, 128, 128, 0.3);
+    margin: 1.5em 0;
+}
+
+/* ===================== */
+/*      📌 DATAVIEW      */
+/* ===================== */
+
+/* Dataview column wrapping and coloring */
+ .table-view-table>tbody>tr>td { 
+    white-space: nowrap !important;
+}
+
+/* Styling for inline Dataview fields */
+.dataview.inline-field {
+  background-color: rgba(100, 100, 100, 0.20) !important;
+  padding: 2px 2px !important;
+  border-radius: 4px !important;
+  font-size: 0.8em !important;
+  margin: 0 1px !important;
+}
+
+/* 🏷️ Dataview Table Header Styling */
+.table-view-th {
+    font-size: 1em !important;  /* Adjust size (default is often too large) */
+    font-weight: 500 !important;  /* Medium weight (default is often too bold) */
+    text-transform: none !important; /* Remove uppercase if applied */
+}
+
+
+/* ================== */
+/*  📌 Other Changes  */
+/* ================== */
+
+body {
+    --checklist-done-decoration: none;
+}
+
+
+.markdown-embed-title {
+  display: none;
+}
+
+.markdown-embed {
+  border-left: none;
+}
+
+/* 📺 Optimize YouTube Embeds */
+iframe[src*="youtu"] {
+    width: 100%;
+    border-radius: 6px;
+}
+
+
+
+
+
+/* Universal Code Block Styling */
+code, pre {
+    font-family: 'SF Mono', 'Menlo', monospace;
+}
+
+pre {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+    font-size: 0.95em;
+}
+
+.markdown-source-view.mod-cm6 .HyperMD-codeblock-begin {
+    padding: 0.4em;
+}
+
+.markdown-source-view.mod-cm6 .HyperMD-codeblock {
+    font-size: 0.7em;
+}
+
+/* Inline Code */
+.markdown-preview-view code,
+.markdown-source-view.mod-cm6 .cm-inline-code,
+code {
+    background-color: var(--code-background);
+    color: var(--code-default);
+    font-size: 0.8em;
+}
+
+/* Light Theme Colors */
+body.theme-light {
+    --code-background: #f9f9f9;
+    --code-default: #3A3A3A;
+    --code-keyword: #6D6DAA;
+    --code-string: #8A9A7B;
+    --code-function: #6D8EA0;
+    --code-variable: #A47E6D;
+    --code-comment: #9E9E9E;
+    --code-number: #B29E7D;
+    --code-punctuation: #A0A0A0;
+}
+
+/* Dark Theme Colors */
+body.theme-dark {
+    --code-background: #3B3B3B;
+    --code-default: #D0D0D0;
+    --code-keyword: #A6A6D1;
+    --code-string: #B2C2A4;
+    --code-function: #9BB4C5;
+    --code-variable: #C8A58E;
+    --code-comment: #606060;
+    --code-number: #CFC2A4;
+    --code-punctuation: #888888;
+}
+
+
+code .token.keyword { color: var(--code-keyword); }
+code .token.string { color: var(--code-string); }
+code .token.function { color: var(--code-function); }
+code .token.variable, code .token.property { color: var(--code-variable); }
+code .token.comment { color: var(--code-comment); font-style: italic; }
+code .token.number { color: var(--code-number); }
+code .token.punctuation { color: var(--code-punctuation); }

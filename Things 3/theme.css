@@ -326,6 +326,10 @@ body.is-phone {
     }
 }
 
+.empty-state-container {
+    color: var(--accent-color);
+}
+
 /* 🔗 Link Enhancements */
 /* === General Link Styling for All Modes === */
 .internal-link,

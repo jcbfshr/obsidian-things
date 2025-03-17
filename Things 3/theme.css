@@ -664,6 +664,11 @@ iframe[src*="youtu"] {
     border-radius: 6px;
 }
 
+/* Visible empty lines in Reading Mode */
+.markdown-preview-view div p {
+margin-bottom: 1.5rem;
+}
+
 .workspace-tab-header-new-tab {
     padding: 0px;
     margin-inline-end: 0px;

@@ -161,15 +161,13 @@ padding-bottom: 5px;
 
 /* styling tags in properties */
 
-.theme-dark .multi-select-pill {
+.theme-dark .metadata-property:is([data-property-key="tags"]) .multi-select-pill {
     color: #f1f1f1 !important;
     font-weight: 600;
     background-color: #2f7155 !important;
-    border: none !important;
-    text-decoration: none !important;
 }
 
-.theme-light .multi-select-pill {
+.theme-light .metadata-property:is([data-property-key="tags"]) .multi-select-pill {
     color: #1e7d58 !important;
     font-weight: 600;
     background-color: #c3e1d3 !important;

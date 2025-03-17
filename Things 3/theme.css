@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 1.4
+Version 1.4.1
 @paralloid, 2025-03-17
 ───────────────────────────────────────*/
 
@@ -11,6 +11,7 @@ body {
     --interactive-accent: #67acff;
     --color-yellow: #fdd31b !important;
     --color-red: #ff5383 !important;
+    --color-red-trans: rgba(255, 83, 131, 0.3);
     --color-cyan: #54ada4 !important;
     --color-blue: #23abf2 !important;
     --color-grey: #6a6a6a !important;
@@ -156,7 +157,7 @@ p:has(.tag ~ br ~ .tag) {
 }
 
 .cm-line:has(.cm-meta):has(+.cm-line .cm-meta) {
-padding-bottom: 5px;
+    padding-bottom: 5px;
 }
 
 /* styling tags in properties */
@@ -507,13 +508,13 @@ mark .external-link,
     color: #ffffff !important; 
 }
 
-/* Fancy highlighting for search results */
+/* Fancy highlighter */
 .is-flashing {
     padding: 4px;
-    border-radius: 14px;
-    background-color: var(--color-red)!important;
-    animation: flashing 0.5s;
-    color: var(--background-secondary) !important;
+    border-radius: 4px;
+    background-color: var(--color-red-trans)!important;
+    animation: flashing 0.6s;
+    color: var(--normal-text) !important;
     border: none;
     outline: none;
 }
@@ -532,6 +533,11 @@ mark .external-link,
         opacity: 1;
     }
 }
+
+.more-options-icon {
+display: none;
+}
+
 
 /*.markdown-rendered table {
 border-color: #ffffff !important;
@@ -633,6 +639,7 @@ input[type="checkbox"] {
 }
 
 
+
 @media print {
     h1, h2, h3, h4, h5, h6 {
         padding-bottom: 10px !important;
@@ -644,7 +651,7 @@ input[type="checkbox"] {
     border: none;
     height: 1px;
     background-color: rgba(128, 128, 128, 0.3);
-    margin: 1.5em 0;
+    margin: 1.1em 0;
 }
 
 /* ===================== */
@@ -733,12 +740,9 @@ pre {
     font-size: 0.95em;
 }
 
-.markdown-source-view.mod-cm6 .HyperMD-codeblock-begin {
-    padding: 0.4em;
-}
 
 .markdown-source-view.mod-cm6 .HyperMD-codeblock {
-    font-size: 0.7em;
+    font-size: .8em;
 }
 
 /* Inline Code */
@@ -747,7 +751,7 @@ pre {
 code {
     background-color: var(--code-background);
     color: var(--code-default);
-    font-size: 0.8em;
+    font-size: .8em;
 }
 
 /* Light Theme Colors */
@@ -1085,4 +1089,30 @@ body:not(.tasks) li[data-task='d'].task-list-item.is-checked,
 body:not(.tasks) li[data-task='P'].task-list-item.is-checked,
 body:not(.tasks) li[data-task='D'].task-list-item.is-checked {
   color: var(--text-normal);
+}
+
+/*Daily Note Calendar tuning*/
+
+.dnc table {
+    table-layout: fixed;
+    width: 90%;
+    margin-left: 15px;
+    margin-right: 30px;
+    padding-bottom: 10px;
+}
+
+.dnc .header h1 {
+font-weight: 700;
+font-size: 1.2em;
+color: var(--color-accent);
+margin-left: 9px;
+margin-right: -7px;
+padding-top: 8px;
+padding-bottom: 10px;
+}
+
+.dnc li {
+padding-left: 8px;
+padding-right: 8px;
+padding-bottom: 4px;
 }

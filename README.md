@@ -21,9 +21,9 @@ Hope you'll enojoy it!
 - Custom checkboxes by Kepano
 
 ## Screenshots
-![](https://github.com/MrParalloid/obsidian-things/blob/main/Things-Light.png)
-![](https://github.com/MrParalloid/obsidian-things/blob/main/Things-Dark.png)
-![](https://github.com/MrParalloid/obsidian-things/blob/main/Quick-Swicher-L.png)
-![](https://github.com/MrParalloid/obsidian-things/blob/main/Quick-Swicher-D.png)
+![Light Theme](https://github.com/MrParalloid/obsidian-things/blob/main/Things-Light.png)
+![Dark Theme](https://github.com/MrParalloid/obsidian-things/blob/main/Things-Dark.png)
+![Quick Switcher Light](https://github.com/MrParalloid/obsidian-things/blob/main/Quick-Switcher-L.png)
+![Quick Switcher Dark](https://github.com/MrParalloid/obsidian-things/blob/main/Quick-Switcher-D.png)
 
 Denis

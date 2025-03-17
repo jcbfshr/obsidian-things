@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 1.1.2
+Version 1.2
 @paralloid, 2025-03-17
 ───────────────────────────────────────*/
 
@@ -14,7 +14,9 @@ body {
     --color-cyan: #54ada4 !important;
     --color-blue: #23abf2 !important;
     --color-grey: #6a6a6a !important;
-    --anim-motion-jumpy: cubic-bezier(.45,.56,.73,1.24) !important;
+/*    --anim-motion-jumpy: cubic-bezier(.45,.56,.73,1.24) !important;*/
+/*    --anim-motion-jumpy: cubic-bezier(.6,.86,.73,1.18) !important;*/
+    --anim-motion-jumpy: cubic-bezier(.42,.81,.54,1.18) !important;
 }
 
 .workspace-tab-header {
@@ -92,8 +94,11 @@ body {
 /* Making Things 3-like Tags */
 
 @font-face {
+
 font-family: 'Formular';
+
 src: url('data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAXMAA4AAAAACOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABHREVGAAAFZAAAABYAAAAWABMABkdQT1MAAAV8AAAAIAAAACBEdkx1R1NVQgAABZwAAAAvAAAAMCN+JIxPUy8yAAACDAAAAEcAAABgII84HWNtYXAAAAJUAAAAMQAAADwAOwB9Z2FzcAAABVwAAAAIAAAACP//AANnbHlmAAABRAAAACgAAAAoKX11F2hlYWQAAAGcAAAANgAAADYW4dEnaGhlYQAAAewAAAAgAAAAJA/2Cc9obXR4AAAB1AAAABgAAAAYDeYAd2xvY2EAAAGMAAAADQAAAA4APAA8bWF4cAAAAWwAAAAeAAAAIABLAEVuYW1lAAACiAAAAq4AAAXocAf8uHBvc3QAAAU4AAAAJAAAADNVXVC5AAIAdwAAA8MFtgADAAcAADMRIRElIREhdwNM/T8CNf3LBbb6SoEEtHjaY2BkYGBgY3BiYGYAASYgZmQAiTmA+QwACZIAkQAAeNpjYGAQQUAAAt4AeQAAAAABAAAAAgCDDlp/b18PPPUACwgAAAAAAM8sf4QAAAAA4KMGkP+m/lgITAc7AAAACAACAAAAAAAABDkAdwAAAAACqgAAAAAAAAI5AAAEygAAeNpjYGRgYLP8Z8l4krv//zIGBg4fBqAICmADAH24BNx42mNgZrnJOIGBlYGB1ZjlLAMDwywIzXSWIY0pC0gzIAFGBnTgwKDAoMxm+c+S8ST7XcY3CgwM08EKfzCdAlIKDEwAU4UM+QB42mNgYGBiYGBgBmIRIMkIplkYNIA0G5BmBMoqMCj//w/kg+n/T/4/AqsCAgCI4wiyAAAAeNqtUrtu1EAUvfZu3g/RISGERqJJpMReVkFityKJlBSRUEgRiXJsjx+s12ONZ9dxw5/QUFJS8QF8AZ9CS8Px7CRrIJEosOWZc1/nnrkeInrmFOTQ4nmHb4EdWoe1wC6tEbe4Ry8ptbjfyVmhHfpo8WrHv0Zv6bPF67RHPy3e6ODNTt8teuw8t3i7g3dozxlbvEtPnQBKnP4GrC/OB4sdeuQOLHZp131tcY/eu28s7ndyVuiJ+9Xi1Y5/jT653y1ep8uetnijgzc7fbfI632zeLuDd5D/w+JdetU/OZVlo7Ik1Wwv3GfDwYujQywjFjTsnDe8EOyEJxGvuIJxwK4bHqaiyvmcXWQqy0UxkR47znNmSCqmRCXUXETemVTTWc7VlUjabUHW5VpS3TGN2W3VuJUyuhaqymTBht5gMLzMBa8EGsRCMS2ZTgVbqq9EqNvUWCoTiWWhmVY8ElOuJoxrrbJgZlIKqbNQVN6/ni/Vuhz7fl3XXqBkXcTyxpMqOS4aNoOgOtOpnGlWCjXNKqM3q1ipZJoFmRaRLe+W+jkEFKHw6ZQkldSQoowS3GJNDLcwpH3sQxrQCzqiQ4tG8AXIZXSOu9/gK0jAOgFKKMJa4VM2coDItcEheAViOfAc3gv0avvl8BY0gQIP3mPYOfalkspYbaXAPscaIfMM+YqmNDN8iq7gT+6srrKHdN2n6m9NY3T/s9f4biojsLSqKtRIVLR+D5EB9kvDwo3uxQlik8twJmnW1ETum31bEwLdssZGwbImNn5tPAo9IninRtsEPg6vNnwBNC9ZCuytFZoTe//9/6Wmb4n5+Hhr83rQoBCrkdOqvoGnPUuCP12YWzSzE6rB1Z5PGs0MPMJMPUN8Od/M3IfScKbmhG1Veyd+7/5QVx96FxMozOr/AnWqLjEAAHjaY2BiAIP/DAxpDNgAGxAzMjAxMjEwM7Cx+IX6+AAAP3gCvAAAAAH//wACAAEAAAAMAAAAAAAAAAIAAQADAAUAAQAAAAEAAAAKABwAHgABREZMVAAIAAQAAAAA//8AAAAAAAB42mNgZGBg4GLQYdBjYHZx8wlhEEmuLMphkMtJLMljkGNgAcoy/P/PAAcArlkHTgA=') format('woff');
+
 }
 
 .theme-dark a.tag {
@@ -190,6 +195,7 @@ padding-bottom: 5px;
     }
 }
 
+
 body.is-mobile .menu {
     position: fixed;
     margin: auto;
@@ -209,16 +215,18 @@ body.is-mobile .menu-item {
     font-size: 1.1em !important;
 }
 
+
 body.is-mobile .menu-item-icon {
     color: var(--accent-color);
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1366px) {
     .menu {
-    animation: slide-in 0.15s var(--anim-motion-jumpy) !important;
+    animation: slide-in 0.14s var(--anim-motion-jumpy) !important;
     transform-origin: top right !important;
     }
 }
+
 
 /* ☀️ LIGHT MODE */
 .theme-light {
@@ -237,6 +245,7 @@ body.is-mobile .menu-item-icon {
 .theme-light .iconize-icon {
     color: var(--color-red) !important;
 }
+
 
 .theme-light .prompt {
     background-color: #f5f6f8;
@@ -276,21 +285,57 @@ body.is-mobile .menu-item-icon {
 
 .nav-files-container {
     box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.01);
+    padding: 12px;
     }
 
-.nav-file, .nav-folder {
-    padding: 1px 10px;
-    font-weight: 600;
+.nav-file {
+    padding-left: 3px;
+    font-weight: 450;
 }
 
-.nav-file.is-active, .nav-folder.is-active, .nav-file-title.is-active, .nav-folder-title.is-active {
-    .theme-dark background-color: #38383a;
-    .theme-dark color: #ffffff;
-    transition: background-color 0.3s ease;
+.nav-folder {
+    padding-left: 0px;
+    padding-top: 4px;
+    font-weight: 650;
+    }
+
+.nav-folder-title {
+    color: var(--normal-text);
 }
+
+body.is-phone {
+.nav-folder-title, .nav-file-title {
+    font-size: 1em; 
+    padding-left: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    }
+}
+
+.tree-item-self .tree-item-icon {
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: var(--icon-opacity);
+    color: var(--icon-color);
+/*    width: var(--size-4-4);*/
+    width: 24px;
+}
+
+.nav-file-title-content, .nav-folder-title-content {
+    display: inline-block;
+    overflow-wrap: anywhere;
+    overflow: hidden;
+    white-space: var(--nav-item-white-space);
+    padding-right: 10px
+}
+
 
 .nav-file-title:hover, .nav-folder-title:hover {
     background-color: var(--background-secondary);
+    transition: background-color 0.1s ease;
 }
 
 /* 🏆 Improved Performance - Reduce Blur for Mobile */
@@ -317,7 +362,7 @@ body.is-phone {
 /* Tab Switcher */
 body.is-phone {
     .menu, .mobile-tab-switcher {
-        animation: slide-in 0.15s 
+        animation: slide-in 0.16s 
         var(--anim-motion-jumpy);
         transform-origin: bottom right;
     }
@@ -391,8 +436,18 @@ a:focus,
 }
 
 .nav-folder-children {
-    transition: height 0.35s ease-in-out;
-    border-left: none
+    transition: height 0.4s linear;
+    animation: fade-in 0.3s linear;
+    border-left: none;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {

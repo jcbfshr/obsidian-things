@@ -1,6 +1,6 @@
 # Things 3 theme for Obsidian
-Version: 1.4.1
-Updated: 2025-03-17
+Version: 1.4.3
+Updated: 2025-03-18
 
 This is a different theme, don't mix it with legendary [Things Theme](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://github.com/colineckert/obsidian-things&ved=2ahUKEwiy3Li9oY-MAxUOSPEDHZGqKVUQFnoECBUQAQ&usg=AOvVaw2YUK11ZDLIbbSD1G9rrdi-) by Colin Eckert!
 

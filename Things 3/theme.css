@@ -189,15 +189,20 @@ padding-bottom: 5px;
 
 
 body.is-mobile .menu {
-    width: 85%;
-    border-radius: 16px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    margin: auto;
+    overflow: auto;
+    margin-right: 20px 20px;
+    max-width: 320px;
+    border-radius: 12px;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.4);
     padding-bottom: 5px;
     margin-bottom: 50px;
 }
 
 body.is-mobile .menu-item {
     outline: none;
+    margin: 3px;
     border-radius: 0 !important;
     font-size: 1.1em !important;
 }
@@ -205,6 +210,13 @@ body.is-mobile .menu-item {
 
 body.is-mobile .menu-item-icon {
     color: var(--accent-color);
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1366px) {
+    .menu {
+    animation: slide-in 0.15s var(--anim-motion-jumpy) !important;
+    transform-origin: top right !important;
+    }
 }
 
 
@@ -304,10 +316,12 @@ body.is-phone {
 }
 
 /* Tab Switcher */
-.menu, .mobile-tab-switcher {
-    animation: slide-in 0.15s 
-    var(--anim-motion-jumpy);
-    transform-origin: bottom right;
+body.is-phone {
+    .menu, .mobile-tab-switcher {
+        animation: slide-in 0.15s 
+        var(--anim-motion-jumpy);
+        transform-origin: bottom right;
+    }
 }
 
 @keyframes slide-in {
@@ -320,7 +334,7 @@ body.is-phone {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .menu, .workspace-leaf {
+    .menu, .workspace-leaf, .prompt, .mobile-tab-switcher {
         animation: none !important;
     }
 }

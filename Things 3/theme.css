@@ -289,7 +289,8 @@ body.is-mobile .menu-item-icon {
     }
 
 .nav-file {
-    padding-left: 3px;
+    padding-left: 0px;
+    padding-top: 4px;
     font-weight: 450;
 }
 

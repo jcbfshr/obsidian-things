@@ -1,7 +1,7 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
 Version 1.4.5
-New: Mobile Toolbar, Daily Note Calendar Integration
+New: Mobile Toolbar
 @paralloid, 2025-03-18
 ───────────────────────────────────────*/
 
@@ -19,6 +19,9 @@ body {
     --color-blue: #23abf2 !important;
     --color-grey: #6a6a6a !important;
     --anim-motion-jumpy: cubic-bezier(.42,.81,.54,1.18) !important;
+    --font-semibold: 500;
+    --font-bold: 600;
+    --font-ui-small: 12px;
     
 }
 
@@ -220,7 +223,7 @@ body.is-mobile .menu-item-icon {
     --titlebar-background-focused: #f9fafb;
     --titlebar-background: #f9fafb;
     --text-normal: #121417;
-    --text-muted: #3e3e3e;
+    --text-muted: #595959;
     --text-on-accent: #ffffff !important;
     --menu-background: #272d35;
     --background-modifier-border: rgba(128, 128, 128, 0.05);
@@ -1280,7 +1283,44 @@ body {
     height: 28px;
 }
 
+.dnc .buttons svg.lucide.lucide-chevron-left {
+    stroke-width: 3px;
+    color: var(--text-normal);
+    opacity: 0.3;
+    }
+
+.dnc .buttons svg.lucide.lucide-chevron-right {
+    stroke-width: 3px;
+    color: var(--text-normal);
+    opacity: 0.3;
+    }
+
 .dnc .buttons {
     padding-right: 25px;
     -webkit-mask-position: center;
     }
+    
+.dnc .has-note:after {
+    display: none;
+}
+
+.dnc .has-note {
+    font-weight: var(--font-bold);
+}
+
+.dnc ul li .note-title {
+    font-weight: var(--font-semibold);
+    font-size: var(--font-normal);
+}
+
+.dnc ul li .note-date {
+    font-weight: var(--font-normal);
+    font-size: var(--font-ui-small);
+    color: var(--text-muted);
+}
+
+.dnc ul li .note-path {
+    font-weight: var(--font-normal);
+    font-size: var(--font-ui-small);
+    color: var(--text-faint);
+}

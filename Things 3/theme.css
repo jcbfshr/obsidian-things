@@ -1,8 +1,8 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 1.4.5
-New: Mobile Toolbar
-@paralloid, 2025-03-18
+Version 1.4.6
+New: Full styling of DNC, Additional animations, Various improvements
+@paralloid, 2025-03-20
 ───────────────────────────────────────*/
 
 @charset "UTF-8";
@@ -22,17 +22,139 @@ body {
     --font-semibold: 500;
     --font-bold: 600;
     --font-ui-small: 12px;
-    
+    --border-width: 0.5px;
+    --div-color: rgba(210, 210, 210, 0.3);
+
 }
 
-/*.workspace-leaf {
-    animation: fade 0.2s ease-in;
-}*/
+/* DARK MODE COLORS */
+.theme-dark {
+    --accent-color: #67acff;
+    --interactive-accent-hover: #3e3e3e;
+    --background-primary: #262626;
+    --background-primary-alt: #2f2f2f;
+    --background-secondary: #1f1f1f;
+    --background-modifier-border: rgba(0, 0, 0, 0.25);
+    --titlebar-background-focused: #1c1c1c;
+    --titlebar-background: #212121;
+    --text-accent: ##1f1f1f;
+    --text-on-accent: #1f1f1f;
+    --text-extreme: #ffffff;
+}
+
+/* DARK MODE CODE BLOCK COLORSs */
+
+body.theme-dark {
+    --code-background: #3B3B3B;
+    --code-default: #D0D0D0;
+    --code-keyword: #A6A6D1;
+    --code-string: #B2C2A4;
+    --code-function: #9BB4C5;
+    --code-variable: #C8A58E;
+    --code-comment: #606060;
+    --code-number: #CFC2A4;
+    --code-punctuation: #888888;
+}
+
+/* FULL BLACK BACKGROUND FOR MOBILE DEVICES */
+@media (hover: none) and (pointer: coarse) {
+    .theme-dark {
+        --background-primary: #000000 !important;
+        --background-secondary: #000000 !important;
+        --background-secondary-alt: #2b3138 !important;
+        --titlebar-background-focused: #000000 !important;
+        --dropdown-background: #2b3138 !important;
+        --modal-background: #2b3138 !important;
+        --popup-background: #2b3138 !important;
+    }
+}
+
+/* LIGHT MODE COLORS */
+.theme-light {
+    --accent-color: #0062c1;
+    --background-primary: #ffffff; 
+    --background-secondary: #f9fafb;
+    --titlebar-background-focused: #f9fafb;
+    --titlebar-background: #f9fafb;
+    --text-normal: #121417;
+    --text-muted: #595959;
+    --text-on-accent: #ffffff !important;
+    --menu-background: #272d35;
+    --background-modifier-border: rgba(128, 128, 128, 0.05);
+    --text-extreme: #000000;
+}
+
+/* LIGHT MODE CODE BLOCK COLORS */
+body.theme-light {
+    --code-background: #f9f9f9;
+    --code-default: #3A3A3A;
+    --code-keyword: #6D6DAA;
+    --code-string: #8A9A7B;
+    --code-function: #6D8EA0;
+    --code-variable: #A47E6D;
+    --code-comment: #9E9E9E;
+    --code-number: #B29E7D;
+    --code-punctuation: #A0A0A0;
+}
+
+/* ANIMATIONS */
 
 @keyframes fade {
     from {opacity: 0.5;}
     to  {opacity: 1;}
     }
+
+@keyframes zoom-in {
+    from {
+        transform: scale(0.90);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-modal {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.85;
+    }
+}
+
+
+@keyframes slide-in {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes flashing {
+    0% {
+        opacity: 50%;
+    }
+    33% {
+        opacity: 1;
+    }
+    66% {
+        opacity: 50%;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 .workspace-tab-header {
     transition: background-color 0.2s ease;
@@ -61,6 +183,15 @@ body {
     transition: background-color 0.2s ease;
     box-shadow: 0 0px 6px rgba(0, 0, 0, 0.2);
 }
+
+
+.inline-title { 
+    color: var(--text-extreme) !important;
+    padding-bottom: 2px; 
+    border-bottom: 1px solid var(--div-color);
+    }
+    
+
 
 /* Making Things 3-like Tags */
 
@@ -134,21 +265,6 @@ p:has(.tag ~ br ~ .tag) {
     text-decoration: none !important;
 }
 
-
-/* 🌙 DARK MODE */
-.theme-dark {
-    --accent-color: #67acff;
-    --interactive-accent-hover: #3e3e3e;
-    --background-primary: #262626;
-    --background-primary-alt: #2f2f2f;
-    --background-secondary: #1f1f1f;
-    --background-modifier-border: rgba(0, 0, 0, 0.2);
-    --titlebar-background-focused: #1c1c1c;
-    --titlebar-background: #212121;
-    --text-accent: ##1f1f1f;
-    --text-on-accent: #1f1f1f;
-}
-
 .theme-dark .workspace-tab-header-container,
 .theme-dark .workspace-split,
 .theme-dark .workspace-leaf {
@@ -164,24 +280,6 @@ p:has(.tag ~ br ~ .tag) {
 .theme-dark .markdown-preview-view strong {
     color: #ffffff !important;
 }
-
-.theme-dark .iconize-icon {
-    color: var(--color-grey) !important;
-}
-
-/* 🌙 FULL BLACK BACKGROUND FOR MOBILE DEVICES */
-@media (hover: none) and (pointer: coarse) {
-    .theme-dark {
-        --background-primary: #000000 !important;
-        --background-secondary: #000000 !important;
-        --background-secondary-alt: #2b3138 !important;
-        --titlebar-background-focused: #000000 !important;
-        --dropdown-background: #2b3138 !important;
-        --modal-background: #2b3138 !important;
-        --popup-backgroun: #2b3138 !important;
-    }
-}
-
 
 body.is-mobile .menu {
     position: fixed;
@@ -214,26 +312,6 @@ body.is-mobile .menu-item-icon {
     }
 }
 
-
-/* ☀️ LIGHT MODE */
-.theme-light {
-    --accent-color: #0062c1;
-    --background-primary: #ffffff; 
-    --background-secondary: #f9fafb;
-    --titlebar-background-focused: #f9fafb;
-    --titlebar-background: #f9fafb;
-    --text-normal: #121417;
-    --text-muted: #595959;
-    --text-on-accent: #ffffff !important;
-    --menu-background: #272d35;
-    --background-modifier-border: rgba(128, 128, 128, 0.05);
-}
-
-.theme-light .iconize-icon {
-    color: var(--color-red) !important;
-}
-
-
 /* Quick Switcher */
 
 .theme-light .prompt {
@@ -244,6 +322,7 @@ body.is-mobile .menu-item-icon {
     transform-origin: top center;
     animation-fill-mode: both !important;
     border-radius: 10px;
+    background-color: #f5f6f8;
 }
 
 .theme-dark .prompt {
@@ -256,14 +335,10 @@ body.is-mobile .menu-item-icon {
     border-radius: 10px;
 }
 
-@keyframes zoom-in {
-    from {
-        transform: scale(0.90);
+.modal-bg, .mobile-menu-overlay, .mobile-popover {
+    animation: fade-in-modal 0.5s !important;
     }
-    to {
-        transform: scale(1);
-    }
-}
+
 
 @media (hover: none) and (pointer: coarse) {
     .prompt {  
@@ -285,9 +360,6 @@ body.is-mobile .menu-item-icon {
     color: var(--text-muted);
 }
 
-.theme-light .prompt {
-    background-color: #f5f6f8;
-}
 
 .theme-light input.prompt-input:hover,
 .theme-light input.prompt-input:focus,
@@ -434,9 +506,12 @@ body.is-phone {
     display:none;
     }
 
-.nav-file-title:hover, .nav-folder-title:hover {
+.nav-file-title:hover,
+.nav-folder-title:hover,
+.nav-file-title:active,
+.nav-folder-title:active {
     background-color: var(--background-secondary);
-    transition: background-color 0.1s ease;
+    transition: background-color 0.5s ease;
 }
 
 .view-header-breadcrumb {
@@ -472,17 +547,8 @@ body.is-phone {
     }
 }
 
-@keyframes slide-in {
-    from {
-        transform: scale(0.8);
-    }
-    to {
-        transform: scale(1);
-    }
-}
-
 @media (prefers-reduced-motion: reduce) {
-    .menu, .workspace-leaf, .prompt, .mobile-tab-switcher {
+    .menu, .workspace-leaf, .prompt, .modal-bg, .mobile-tab-switcher {
         animation: none !important;
     }
 }
@@ -542,15 +608,6 @@ a:focus,
     border-left: none;
 }
 
-@keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
 
 @media (prefers-reduced-motion: reduce) {
     .nav-folder-children {
@@ -587,20 +644,6 @@ mark .external-link,
     outline: none;
 }
 
-@keyframes flashing {
-    0% {
-        opacity: 50%;
-    }
-    33% {
-        opacity: 1;
-    }
-    66% {
-        opacity: 50%;
-    }
-    100% {
-        opacity: 1;
-    }
-}
 
 .more-options-icon {
 display: none;
@@ -630,13 +673,6 @@ border-color: #ffffff !important;
     margin-top: 0px;
     font-weight: 500;
 }*/
-
-.theme-dark .inline-title {
-color: #ffffff !important; }
-
-.theme-light .inline-title {
-color: #000000 !important;
-}
 
 /*ChatGPT Suggested Option to Equalize*/
 /* ====================== */
@@ -718,7 +754,7 @@ input[type="checkbox"] {
 .markdown-source-view hr, .markdown-source-view.mod-cm6 .cm-hr {
     border: none;
     height: 1px;
-    background-color: rgba(128, 128, 128, 0.3);
+    background-color: var(--div-color);
     margin: 1.1em 0;
 }
 
@@ -836,8 +872,10 @@ body.is-mobile .mobile-navbar, body.is-mobile .workspace-drawer .nav-header {
 
 body.is-mobile .mobile-image-viewer{
     -webkit-backdrop-filter:blur(15px);
-    background-color:var(--workspace-background-translucent)
+    background-color:var(--workspace-background-translucent);
+    animation: zoom-in 0.3s;
     }
+
 body.is-mobile .mobile-image-viewer img{border-radius:0}
 
 .mobile-navbar-action:nth-child(5) .clickable-icon {
@@ -845,19 +883,15 @@ body.is-mobile .mobile-image-viewer img{border-radius:0}
 }
 
 /* Universal Code Block Styling */
+
 code, pre {
     font-family: 'SF Mono', 'Menlo', monospace;
 }
 
 pre {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
-    font-size: 0.95em;
+/*    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);*/
 }
 
-
-.markdown-source-view.mod-cm6 .HyperMD-codeblock {
-    font-size: .8em;
-}
 
 /* Inline Code */
 .markdown-preview-view code,
@@ -865,33 +899,7 @@ pre {
 code {
     background-color: var(--code-background);
     color: var(--code-default);
-    font-size: .8em;
-}
-
-/* Light Theme Colors */
-body.theme-light {
-    --code-background: #f9f9f9;
-    --code-default: #3A3A3A;
-    --code-keyword: #6D6DAA;
-    --code-string: #8A9A7B;
-    --code-function: #6D8EA0;
-    --code-variable: #A47E6D;
-    --code-comment: #9E9E9E;
-    --code-number: #B29E7D;
-    --code-punctuation: #A0A0A0;
-}
-
-/* Dark Theme Colors */
-body.theme-dark {
-    --code-background: #3B3B3B;
-    --code-default: #D0D0D0;
-    --code-keyword: #A6A6D1;
-    --code-string: #B2C2A4;
-    --code-function: #9BB4C5;
-    --code-variable: #C8A58E;
-    --code-comment: #606060;
-    --code-number: #CFC2A4;
-    --code-punctuation: #888888;
+    border-radius: 4px;
 }
 
 
@@ -1205,19 +1213,19 @@ body:not(.tasks) li[data-task='D'].task-list-item.is-checked {
   color: var(--text-normal);
 }
 
-/*Daily Note Calendar tuning*/
+/* DAILY NOTE CALENDAR ADJUSTMENTS */
 
 .dnc table {
     table-layout: fixed;
     background-color: var(--background-primary);
     border-radius: 6px;
-    width: 90%;
-    margin-left: 15px;
-    margin-right: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 10px;
-    padding-left: 10px;
+    width: 95%;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-top: 7px;
+    padding-bottom: 15px;
+    padding-right: 7px;
+    padding-left: 7px;
 /*    box-shadow: 0 0px 6px rgba(0, 0, 0, 0.2);*/
 }
 
@@ -1244,6 +1252,7 @@ padding-bottom: 4px;
 body {
 --background-modifier-active-hover: #5c9aff;
 }
+
 .dnc td:hover:not(:empty), .dnc th:hover:not(:empty) {
     background-color: var(--background-modifier-active-hover);
     color: #ffffff;
@@ -1308,6 +1317,14 @@ body {
     font-weight: var(--font-bold);
 }
 
+.theme-dark .dnc .has-note {
+    color: #fff;
+}
+
+.theme-light .dnc .has-note {
+    color: #000;
+}
+
 .dnc ul li .note-title {
     font-weight: var(--font-semibold);
     font-size: var(--font-normal);
@@ -1323,4 +1340,15 @@ body {
     font-weight: var(--font-normal);
     font-size: var(--font-ui-small);
     color: var(--text-faint);
+}
+
+
+/* ICONIZE ADJUSMENTS */
+
+.theme-dark .iconize-icon {
+    color: var(--color-grey) !important;
+}
+
+.theme-light .iconize-icon {
+    color: var(--color-red) !important;
 }

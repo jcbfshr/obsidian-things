@@ -2,10 +2,12 @@
 Version: 1.4.7
 Updated: 2025-03-23
 
-This is a different theme, don't mix it with legendary [Things Theme](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://github.com/colineckert/obsidian-things&ved=2ahUKEwiy3Li9oY-MAxUOSPEDHZGqKVUQFnoECBUQAQ&usg=AOvVaw2YUK11ZDLIbbSD1G9rrdi-) by Colin Eckert!
-
+This theme is aimed to provide consistent experience to those who use Obsidian together with Things 3. It has been tested on macOS, iPadOS, and iOS only.
 Just my take on Things 3 integration, by providing visual consistency between the two applications. 
+
 Hope you'll enojoy it!
+
+Don't mix it with legendary [Things Theme](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://github.com/colineckert/obsidian-things&ved=2ahUKEwiy3Li9oY-MAxUOSPEDHZGqKVUQFnoECBUQAQ&usg=AOvVaw2YUK11ZDLIbbSD1G9rrdi-) by Colin Eckert!
 
 ## Features
 - Exact color match with Things for Light and Dark options

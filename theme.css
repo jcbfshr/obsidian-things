@@ -23,7 +23,7 @@ body {
     --font-ui-small: 12px;
     --border-width: 0.5px;
     --blockquote-background-color: rgba(128,128,128,0.10);
-
+    --tab-stacked-pane-width: 1200px;
 }
 
 /* DARK MODE COLORS */
@@ -863,8 +863,8 @@ iframe[src*="youtu"] {
 }
 
 .workspace-tab-header-new-tab .clickable-icon {
-    margin-left: -25px;
-    margin-top: 10px;
+    margin-left: -15px;
+    margin-top: 3px;
     --icon-size: var(--icon-s);
     align-items: center;
 }

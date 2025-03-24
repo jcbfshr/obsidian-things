@@ -300,14 +300,12 @@ src: url('data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAXMAA4AAAAACOAAAAAAAA
 
 body.is-mobile .menu {
     position: fixed;
-    margin: auto;
     overflow: auto;
-    margin-right: 20px 20px;
     max-width: 320px;
     border-radius: 12px;
     box-shadow: 0 0px 10px rgba(0, 0, 0, 0.4);
-    padding-bottom: 5px;
-/*    margin-bottom: 50px;*/
+    margin-right: 20px 20px;
+    margin-bottom: 40px;
 }
 
 body.is-mobile .menu-item {

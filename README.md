@@ -17,7 +17,7 @@ Don't mix it with legendary [Things Theme](https://www.google.com/url?sa=t&sourc
 - Things 3 like Quick Switcher
 - Things 3 like Menus
 - Things 3 like Tags
-- Things 3 like mobile toolbar (kudos to [Alex the Creator of Cupertino theme](https://github.com/aaaaalexis) for some of the code I borrowed)
+- Things 3 like Mobile Toolbar (kudos to [Alex the Creator of Cupertino theme](https://github.com/aaaaalexis) for some of the code I borrowed)
 - Fancy highlighter
 - Black background for Dark theme on Mobiles
 - No-wrap Dataview
@@ -25,6 +25,7 @@ Don't mix it with legendary [Things Theme](https://www.google.com/url?sa=t&sourc
 - Full-size YT Previews
 - Custom checkboxes by Kepano
 - Daily Notes Calendar plugin customizations
+- Iconize default color overrides
 
 ## Screenshots
 ![Light Theme](https://github.com/MrParalloid/obsidian-things/blob/main/Things-Light.png)

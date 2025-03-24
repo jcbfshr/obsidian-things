@@ -20,7 +20,7 @@ body {
     --anim-motion-jumpy: cubic-bezier(.42,.81,.54,1.18) !important;
     --font-semibold: 500;
     --font-bold: 600;
-    --font-ui-small: 12px;
+    --font-ui-small: 13px;
     --border-width: 0.5px;
     --blockquote-background-color: rgba(128,128,128,0.10);
     --tab-stacked-pane-width: 1200px;
@@ -199,7 +199,7 @@ body.theme-light {
 
 .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote,
 .markdown-source-view.cm-s-obsidian.mod-cm6.is-live-preview .HyperMD-quote {
-    font-style: var(--blockquote-style);
+    font-style: var(--font-text);
     background-color: var(--blockquote-background-color);
     border-color: var(--color-red);
 }
@@ -761,14 +761,6 @@ input[type="checkbox"] {
 
 .HyperMD-list-line-1 {
     padding-top: 0px !important;    
-}
-
-.markdown-source-view.cm-s-obsidian.mod-cm6.is-live-preview .HyperMD-quote,
-.cm-formatting .cm-formatting-quote,
-.cm-formatting-quote-1,
-.cm-quote,
-.cm-quote-1 {
-    padding-right: 10px !important;    
 }
 
 .markdown-preview-view blockquote {

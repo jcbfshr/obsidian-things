@@ -40,6 +40,8 @@ body {
     --text-on-accent: #1f1f1f;
     --text-extreme: #ffffff;
     --div-color: rgba(60, 60, 60, 0.9);
+    --background-modifier-border: rgba(60, 60, 60, 0.9);
+    --tag-color: #f1f1f1;
 }
 
 /* DARK MODE CODE BLOCK COLORSs */
@@ -72,10 +74,10 @@ body.theme-dark {
     --text-muted: #595959;
     --text-on-accent: #ffffff !important;
     --menu-background: #272d35;
-    --background-modifier-border: rgba(128, 128, 128, 0.05);
+    --background-modifier-border: rgba(200, 200, 200, 0.9);
     --text-extreme: #000000;
     --div-color: rgba(200, 200, 200, 0.9);
-
+    --tag-color: #1e7d58;
 }
 
 /* LIGHT MODE CODE BLOCK COLORS */
@@ -232,7 +234,7 @@ src: url('data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAXMAA4AAAAACOAAAAAAAA
 
 .theme-dark a.tag {
     color: #f1f1f1 !important;
-    font-weight: 600;
+    font-weight: 500;
     background-color: #2f7155 !important;
     border: none !important;
     text-decoration: none !important;
@@ -242,7 +244,7 @@ src: url('data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAXMAA4AAAAACOAAAAAAAA
 
 .theme-light a.tag {
     color: #1e7d58 !important;
-    font-weight: 600;
+    font-weight: 500;
     background-color: #c3e1d3 !important;
     border: none !important;
     text-decoration: none !important;
@@ -252,7 +254,7 @@ src: url('data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAXMAA4AAAAACOAAAAAAAA
 
 .theme-dark span.cm-hashtag {
     color: #f1f1f1 !important;
-    font-weight: 600;
+    font-weight: 500;
     background-color: #2f7155 !important;
     border: none !important;
     text-decoration: none !important;
@@ -260,7 +262,7 @@ src: url('data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAXMAA4AAAAACOAAAAAAAA
 
 .theme-light span.cm-hashtag {
     color: #1e7d58 !important;
-    font-weight: 600;
+    font-weight: 500 !important;
     background-color: #c3e1d3 !important;
     border: none !important;
     text-decoration: none !important;
@@ -270,13 +272,13 @@ src: url('data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAXMAA4AAAAACOAAAAAAAA
 
 .theme-dark .metadata-property:is([data-property-key="tags"]) .multi-select-pill {
     color: #f1f1f1 !important;
-    font-weight: 600;
+    font-weight: 500;
     background-color: #2f7155 !important;
 }
 
 .theme-light .metadata-property:is([data-property-key="tags"]) .multi-select-pill {
     color: #1e7d58 !important;
-    font-weight: 600;
+    font-weight: 500;
     background-color: #c3e1d3 !important;
     border: none !important;
     text-decoration: none !important;
@@ -300,12 +302,14 @@ src: url('data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAXMAA4AAAAACOAAAAAAAA
 
 body.is-mobile .menu {
     position: fixed;
+    margin: auto;
     overflow: auto;
+    margin-right: 20px 20px;
     max-width: 320px;
     border-radius: 12px;
     box-shadow: 0 0px 10px rgba(0, 0, 0, 0.4);
-    margin-right: 20px 20px;
-    margin-bottom: 40px;
+    padding-bottom: 5px;
+/*    margin-bottom: 50px;*/
 }
 
 body.is-mobile .menu-item {
@@ -799,25 +803,34 @@ input[type="checkbox"] {
 /*      📌 DATAVIEW      */
 /* ===================== */
 
-/* Dataview column wrapping and coloring */
- .table-view-table>tbody>tr>td { 
-    white-space: nowrap !important;
-}
 
 /* Styling for inline Dataview fields */
 .dataview.inline-field {
-  background-color: rgba(100, 100, 100, 0.20) !important;
   padding: 2px 2px !important;
-  border-radius: 4px !important;
+  border-color: var(--div-color) !important;
   font-size: 0.8em !important;
   margin: 0 1px !important;
 }
 
 /* 🏷️ Dataview Table Header Styling */
 .table-view-th {
-    font-size: 1em !important;  /* Adjust size (default is often too large) */
-    font-weight: 500 !important;  /* Medium weight (default is often too bold) */
-    text-transform: none !important; /* Remove uppercase if applied */
+    font-size: 1em !important;
+    font-weight: 500 !important;
+}
+
+.table-view-table > thead > tr > th {
+    font-weight: 500;
+    font-size: larger;
+    border: solid 1px;
+    background-color: var(--background-secondary) !important;
+}
+
+.table-view-table > tbody > tr > td {
+    text-align: left;
+    border: solid 1px;
+    font-weight: 400;
+    max-width: 100%;
+    white-space: nowrap !important;
 }
 
 
@@ -1379,4 +1392,38 @@ body {
 
 .theme-light .iconize-icon {
     color: var(--color-red) !important;
+}
+
+
+/* CALENDAR PLUGIN */
+
+.reset-button.svelte-1vwr9dd.svelte-1vwr9dd {
+    cursor: pointer;
+    color: transparent !important;
+    margin: 0 4px;
+    padding: 0px 4px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='rgb(253, 211, 27)' stroke='orange' stroke-width='0.3' %3E%3Cpath d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z' /%3E%3C/svg%3E");
+    -webkit-mask-size: auto;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    width: 24px;
+    height: 24px;
+}
+
+.container.svelte-pcimu8 {
+    --color-background-heading: transparent;
+    --color-background-day: transparent;
+    --color-background-weeknum: transparent;
+    --color-background-weekend: transparent;
+    --color-dot: var(--text-muted);
+    --color-arrow: var(--text-muted);
+    --color-button: var(--text-muted);
+    --color-text-title: var(--text-normal);
+    --color-text-heading: var(--text-muted);
+    --color-text-day: var(--text-normal);
+    --color-text-today: var(--interactive-accent);
+    --color-text-weeknum: var(--text-muted);
+    font-family: var(--font-text);
+    font-size: var(--font-text-size);
+    font-weight: normal;
 }

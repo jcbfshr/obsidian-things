@@ -308,8 +308,7 @@ body.is-mobile .menu {
     max-width: 320px;
     border-radius: 12px;
     box-shadow: 0 0px 10px rgba(0, 0, 0, 0.4);
-    padding-bottom: 5px;
-/*    margin-bottom: 50px;*/
+    margin-bottom: 50px;
 }
 
 body.is-mobile .menu-item {
@@ -414,7 +413,7 @@ input.prompt-input {
 }
 
 .prompt-results {
-    padding:8px;
+    padding: 8px;
     }
 
 .theme-light .prompt-input::placeholder {
@@ -446,8 +445,8 @@ input.prompt-input {
 }
 
 .suggestion-item {
-    align-items: center !important;  /* Align text & icon vertically */
-    gap: 8px; /* Add spacing between icon and text */
+    align-items: center !important;
+    gap: 8px;
 }
 
 
@@ -460,11 +459,12 @@ input.prompt-input {
     padding-right: 20px;
     width: 0px;
     height: 24px;
-    margin-right: 3px;
+    margin-right: 8px;
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="none" stroke="%23808080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-file"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path></svg>');
     background-size: auto;
     background-position: left;
     background-repeat: no-repeat;
+    animation: fade-in 0.2s;
 }
 
 .modal-container .iconize-modal .suggestion-item::before {
@@ -639,6 +639,19 @@ body.is-phone {
     color: var(--accent-color) !important;
     text-decoration: none !important;
     caret-color: var(--accent-color) !important;
+}
+
+.external-link {
+    color: var(--link-external-color);
+    text-decoration-line: var(--link-external-decoration);
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: 0.625em;
+    padding-inline-end: 0.95em;
+    background-position-y: 0.3em;
+    cursor: pointer;
+    filter: var(--link-external-filter);
+    transition: opacity 0.25s ease-in-out;
 }
 
 a:hover, 
@@ -918,9 +931,9 @@ body.is-mobile .mobile-navbar, body.is-mobile .workspace-drawer .nav-header {
     }*/
 
 body.is-mobile .mobile-image-viewer{
-    -webkit-backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(10px);
     background-color:var(--workspace-background-translucent);
-    animation: zoom-in 0.3s;
+    animation: zoom-in 0.2s linear;
     }
 
 body.is-mobile .mobile-image-viewer img{border-radius:0}

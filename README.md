@@ -10,21 +10,21 @@ Hope you'll enojoy it!
 Don't mix it with legendary [Things Theme](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://github.com/colineckert/obsidian-things&ved=2ahUKEwiy3Li9oY-MAxUOSPEDHZGqKVUQFnoECBUQAQ&usg=AOvVaw2YUK11ZDLIbbSD1G9rrdi-) by Colin Eckert!
 
 ## Features
-- Exact color match with Things for Light and Dark options
-- Desktop and Mobile differences included
+- Exact color match with Things 3 for Light and Dark options, Desktop and Mobile
 - Things 3 like Animations
 - Things 3 like Sidebar
 - Things 3 like Quick Switcher
 - Things 3 like Menus
-- Things 3 like Tags
+- Things 3 like Tags (hidden #)
 - Things 3 like Mobile Toolbar (kudos to [Alex the Creator of Cupertino theme](https://github.com/aaaaalexis) for some of the code I borrowed)
 - Fancy highlighter
 - Black background for Dark theme on Mobiles
 - No-wrap Dataview
-- Prettyfied Code Blocks (in Reading mode)
+- Prettified Code Blocks
 - Full-size YT Previews
 - Custom checkboxes by Kepano
 - Daily Notes Calendar plugin customizations
+- Calendar plugin customization
 - Iconize default color overrides
 
 ## Screenshots

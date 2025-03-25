@@ -19,13 +19,26 @@ Don't mix it with legendary [Things Theme](https://www.google.com/url?sa=t&sourc
 - Things 3 like Mobile Toolbar (kudos to [Alex the Creator of Cupertino theme](https://github.com/aaaaalexis) for some of the code I borrowed)
 - Fancy highlighter
 - Black background for Dark theme on Mobiles
-- No-wrap Dataview
 - Prettified Code Blocks
 - Full-size YT Previews
+- Full-width Mobile sidebars
+
+## Integrations
+- [Dataview] No-wrap rows
+- [Dataview] More accurate table borders and overall look
+- [Daily Notes Calendar] Customizations to match Things 3 look
+- [Calendar] Custom Today button to match Things 3 look
+- [Iconize] default color overrides separately for Light and Dark options
 - Custom checkboxes by Kepano
-- Daily Notes Calendar plugin customizations
-- Calendar plugin customization
-- Iconize default color overrides
+
+NOTE: This theme seems to be not compatible with **Iconic** plugin!
+
+It is recommended to be used with these plugins:
+- Iconize
+- Daily Note Calendar
+- Better Search Views
+
+Give it a try!
 
 ## Screenshots
 ![Light Theme](https://github.com/MrParalloid/obsidian-things/blob/main/Things-Light.png)

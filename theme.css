@@ -1,13 +1,14 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 1.4.7
-@paralloid, 2025-03-23
+Version 1.4.8
+@paralloid, 2025-03-25
 ───────────────────────────────────────*/
 
 @charset "UTF-8";
 body {
     --tab-curve: 0px;
-    --color-accent: #67acff !important;
+    --color-accent-2: hsl(calc(var(--accent-h) - 5), calc(var(--accent-s) * 1.05), calc(var(--accent-l) * 1.29))
+    --text-accent-hover: var(--color-accent-2);
     --interactive-accent: #67acff;
     --color-yellow-rgb: rgb(253, 211, 27);
     --color-yellow: #fdd31b !important;
@@ -29,6 +30,10 @@ body {
 /* DARK MODE COLORS */
 .theme-dark {
     --accent-color: #67acff;
+    --color-accent: #67acff !important;
+    --accent-h: 219 !important;
+    --accent-s: 90% !important;
+    --accent-l: 60% !important;
     --interactive-accent-hover: #3e3e3e;
     --background-primary: #262626;
     --background-primary-alt: #2f2f2f;
@@ -66,6 +71,10 @@ body.theme-dark {
 /* LIGHT MODE COLORS */
 .theme-light {
     --accent-color: #0062c1;
+    --color-accent: #0062c1 !important;
+    --accent-h: 210 !important;
+    --accent-s: 100% !important;
+    --accent-l: 30% !important;
     --background-primary: #ffffff; 
     --background-secondary: #f9fafb;
     --titlebar-background-focused: #f9fafb;

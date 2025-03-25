@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 1.4.8
+Version 1.4.9
 @paralloid, 2025-03-25
 ───────────────────────────────────────*/
 
@@ -43,7 +43,7 @@ body {
     --text-on-accent: #1f1f1f;
     --text-extreme: #ffffff;
     --div-color: rgba(60, 60, 60, 0.9);
-    --background-modifier-border: rgba(60, 60, 60, 0.9);
+    --background-modifier-border: rgba(0, 0, 0, 0.2);
     --tag-color: #f1f1f1;
 }
 
@@ -63,6 +63,7 @@ body.theme-dark {
         --dropdown-background: #2b3138 !important;
         --modal-background: #2b3138 !important;
         --popup-background: #2b3138 !important;
+        --background-modifier-border: rgba(60, 60, 60, 0.9);
     }
 }
 
@@ -81,7 +82,7 @@ body.theme-dark {
     --text-muted: #595959;
     --text-on-accent: #ffffff !important;
     --menu-background: #272d35;
-    --background-modifier-border: rgba(200, 200, 200, 0.9);
+    --background-modifier-border: rgba(200, 200, 200, 0.1);
     --text-extreme: #000000;
     --div-color: rgba(200, 200, 200, 0.9);
     --tag-color: #1e7d58;
@@ -387,6 +388,10 @@ body.is-mobile .menu-item-icon {
     margin-top: 8px;
     margin-right: -30px;
     color: var(--text-muted);
+}
+
+.prompt-input-container {
+    border: none !important;
 }
 
 input.prompt-input:hover,

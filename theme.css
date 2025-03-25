@@ -7,7 +7,7 @@ Version 1.4.8
 @charset "UTF-8";
 body {
     --tab-curve: 0px;
-    --color-accent-2: hsl(calc(var(--accent-h) - 5), calc(var(--accent-s) * 1.05), calc(var(--accent-l) * 1.29))
+    --color-accent-2: hsl(calc(var(--accent-h) - 5), calc(var(--accent-s) * 1.05), calc(var(--accent-l) * 1.29));
     --text-accent-hover: var(--color-accent-2);
     --interactive-accent: #67acff;
     --color-yellow-rgb: rgb(253, 211, 27);
@@ -38,10 +38,9 @@ body {
     --background-primary: #262626;
     --background-primary-alt: #2f2f2f;
     --background-secondary: #1f1f1f;
-    --background-modifier-border: rgba(0, 0, 0, 0.25);
     --titlebar-background-focused: #1c1c1c;
     --titlebar-background: #212121;
-    --text-accent: ##1f1f1f;
+    --text-accent: #1f1f1f;
     --text-on-accent: #1f1f1f;
     --text-extreme: #ffffff;
     --div-color: rgba(60, 60, 60, 0.9);

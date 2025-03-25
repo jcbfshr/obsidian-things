@@ -1,6 +1,6 @@
 # Things 3 theme for Obsidian
-Version: 1.4.7
-Updated: 2025-03-23
+Version: 1.4.8
+Updated: 2025-03-25
 
 This theme is aimed to provide consistent experience to those who use Obsidian together with Things 3. It has been tested on macOS, iPadOS, and iOS only.
 Just my take on Things 3 integration, by providing visual consistency between the two applications. 

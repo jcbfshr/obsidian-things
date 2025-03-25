@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 1.4.9
+Version 1.4.10
 @paralloid, 2025-03-25
 ───────────────────────────────────────*/
 
@@ -18,7 +18,7 @@ body {
     --color-cyan: #54ada4 !important;
     --color-blue: #23abf2 !important;
     --color-grey: #6a6a6a !important;
-    --anim-motion-jumpy: cubic-bezier(.42,.81,.54,1.18) !important;
+    --anim-motion-jumpy: cubic-bezier(.42,.81,.54,1.18);
     --font-semibold: 500;
     --font-bold: 600;
     --font-ui-small: 13px;
@@ -179,6 +179,9 @@ body.theme-light {
 .workspace-tab-header.is-active {
     transition: background-color 0.2s ease;
     box-shadow: 0 0px 6px rgba(0, 0, 0, 0.2);
+    font-weight: 600;
+    color: var(--text-extreme);
+    transition: font-weight 0.1s ease-in;
 }
 
 
@@ -187,7 +190,6 @@ body.theme-light {
     padding-bottom: 6px; 
     border-bottom: 1px solid var(--div-color);
     }
-    
 
 
 /* Blockquotes */
@@ -342,11 +344,9 @@ body.is-mobile .menu-item-icon {
 /* Quick Switcher */
 
 .prompt {
-    animation-fill-mode: both;
     line-height: 18px;
     animation: zoom-in 0.05s ease-out;
     transform-origin: top center;
-    animation-fill-mode: both !important;
     border-radius: 10px;
     background-color: #f5f6f8;
 }
@@ -365,17 +365,21 @@ body.is-mobile .menu-item-icon {
     animation: fade-in-modal 0.35s ease-out !important;
     }
 
-@media (hover: none) and (pointer: coarse) {
-    .prompt {  
-        border-radius: 16px;
+body.is-phone .prompt {
         background-color: var(--modal-background) !important;
         animation: zoom-in 0.25s var(--anim-motion-jumpy) !important;
         box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5) !important;
         width: 90vw !important;
-        height: 80vh !important;
-        animation-fill-mode: both !important;
         transition: height 0.3s ease-out;
-    }
+}
+
+body.is-tablet .prompt {
+        background-color: var(--modal-background) !important;
+        animation: zoom-in 0.25s var(--anim-motion-jumpy) !important;
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5) !important;
+        width: 70vw !important;
+        max-height: 35em !important;
+        transition: height 0.3s ease-out;
 }
 
 .modal {
@@ -697,10 +701,14 @@ a:focus,
 /*    HIGHLIGHT    */
 .markdown-preview-view mark,
 .cm-s-obsidian span.cm-highlight {
-    .theme-dark background-color: #726630 !important;
-    .theme-dark color: #ffffff !important;
     padding: 2px 4px !important;
     border-radius: 3px !important;
+}
+
+.theme-dark .markdown-preview-view mark,
+.theme-dark .cm-s-obsidian span.cm-highlight {
+    background-color: #726630 !important;
+    color: #ffffff !important;
 }
 
 /* Highlighted links (Make them stand out) */
@@ -779,7 +787,7 @@ input[type="checkbox"] {
 }
 
 body {
-    --checklist-done-decoration: color: var(--text-muted);
+    --checklist-done-decoration: none;
 }
 
 .markdown-rendered ul > li {

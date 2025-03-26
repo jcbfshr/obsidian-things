@@ -1,13 +1,12 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 1.4.10
-@paralloid, 2025-03-25
+Version 1.5
+@paralloid, 2025-03-26
 ───────────────────────────────────────*/
 
 @charset "UTF-8";
 body {
     --tab-curve: 0px;
-    --color-accent-2: hsl(calc(var(--accent-h) - 5), calc(var(--accent-s) * 1.05), calc(var(--accent-l) * 1.29));
     --text-accent-hover: var(--color-accent-2);
     --interactive-accent: #67acff;
     --color-yellow-rgb: rgb(253, 211, 27);
@@ -25,16 +24,16 @@ body {
     --border-width: 0.5px;
     --blockquote-background-color: rgba(128,128,128,0.10);
     --tab-stacked-pane-width: 1200px;
+    --interactive-accent-hover: var(--color-accent-2) !important;
 }
 
 /* DARK MODE COLORS */
 .theme-dark {
     --accent-color: #67acff;
     --color-accent: #67acff !important;
-    --accent-h: 219 !important;
-    --accent-s: 90% !important;
-    --accent-l: 60% !important;
-    --interactive-accent-hover: #3e3e3e;
+    --accent-h: 213 !important;
+    --accent-s: 100% !important;
+    --accent-l: 70% !important;
     --background-primary: #262626;
     --background-primary-alt: #2f2f2f;
     --background-secondary: #1f1f1f;
@@ -46,6 +45,7 @@ body {
     --background-modifier-border: rgba(0, 0, 0, 0.2);
     --tag-color: #f1f1f1;
     --checklist-done-color: #8a919b;
+    --color-accent-2: hsl(calc(var(--accent-h) - 0), calc(var(--accent-s) * 0.8), calc(var(--accent-l) * 0.85)) !important;
 }
 
 /* DARK MODE CODE BLOCK COLORSs */
@@ -73,7 +73,7 @@ body.theme-dark {
     --color-accent: #0062c1 !important;
     --accent-h: 210 !important;
     --accent-s: 100% !important;
-    --accent-l: 30% !important;
+    --accent-l: 38% !important;
     --background-primary: #ffffff; 
     --background-secondary: #f9fafb;
     --titlebar-background-focused: #f9fafb;
@@ -87,6 +87,7 @@ body.theme-dark {
     --div-color: rgba(200, 200, 200, 0.9);
     --tag-color: #1e7d58;
     --checklist-done-color: #82868a;
+    --color-accent-2: hsl(calc(var(--accent-h) - 0), calc(var(--accent-s) * 0.8), calc(var(--accent-l) * 1.35)) !important;
 }
 
 /* LIGHT MODE CODE BLOCK COLORS */
@@ -162,27 +163,43 @@ body.theme-light {
 .view-header {
     transition: background-color 0.2s ease;
     color: var(--normal-text);
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .workspace-tab-header-container-inner {
     margin: 3px 15px calc(var(--tab-outline-width)* -1);
-    padding: 0px 0px 0;
+/*    padding: 0px 0px 0;*/
 }
 
+.workspace-tab-header-inner-title {
+    padding-left: 3px;
+}
 
-.workspace-tab-header:hover {
-    transition: background-color 0.2s ease;
-    color: var(--normal-text);
+/*.workspace-tab-header-inner-close-button { order: -1; }*/
+
+body:not(.is-mobile) .workspace-tab-header-inner-close-button {
+    display: none;
+}
+
+.workspace-tabs:not(.mod-stacked) .workspace-tab-header:hover .workspace-tab-header-inner-close-button,
+.workspace-tab-header.is-active .workspace-tab-header-inner-close-button {
+    pointer-events: all;
+    margin-left: -2px;
+    animation: fade-in 0.4s;
 }
 
 .workspace-tab-header.is-active {
     transition: background-color 0.2s ease;
     box-shadow: 0 0px 6px rgba(0, 0, 0, 0.2);
-    font-weight: 600;
     color: var(--text-extreme);
-    transition: font-weight 0.1s ease-in;
 }
 
+body.is-tablet .workspace-tab-header.is-active {
+    font-weight: 600;
+    transition: font-weight 0.1s ease-in;
+    color: var(--text-extreme);
+}
 
 .inline-title { 
     color: var(--text-extreme) !important;
@@ -1421,6 +1438,11 @@ body {
 
 .theme-light .iconize-icon {
     color: var(--color-red) !important;
+}
+
+.iconize-icon {
+    margin: 0px 6px 0px 0px !important;
+    animation: fade-in 0.2s ease-in !important;
 }
 
 

@@ -1,6 +1,6 @@
 # Things 3 theme for Obsidian
-Version: 1.5
-Updated: 2025-03-26
+Version: 1.5.2
+Updated: 2025-03-27
 
 This theme is aimed to provide consistent experience to those who use Obsidian together with Things 3. It has been tested on macOS, iPadOS, and iOS only.
 Just my take on Things 3 integration, by providing visual consistency between the two applications. 
@@ -33,6 +33,7 @@ Don't mix it with legendary [Things Theme](https://www.google.com/url?sa=t&sourc
 - [Iconize] default color overrides separately for Light and Dark options
 - [Iconize] fancy animations make whole sidebar smooth
 - [Iconize] fixed icon margin so you don't have to fiddle with settings (later will be added to Style Settings to switch this off)
+- [Ink] Some minor adjustments to better fit theme aesthetics
 
 NOTE: This theme seems to be not compatible with **Iconic** plugin!
 

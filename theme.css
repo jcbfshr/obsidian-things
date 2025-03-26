@@ -162,7 +162,6 @@ body.theme-light {
 .view-header {
     transition: background-color 0.2s ease;
     color: var(--normal-text);
-    margin-top: 15px;
 }
 
 .workspace-tab-header-container-inner {

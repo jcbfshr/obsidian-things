@@ -49,4 +49,7 @@ Give it a try!
 ![Quick Switcher Light](https://github.com/MrParalloid/obsidian-things/blob/main/Quick-Switcher-L.png)
 ![Quick Switcher Dark](https://github.com/MrParalloid/obsidian-things/blob/main/Quick-Switcher-D.png)
 
+## Suggested Iconize Custom Rules
+![This will make it look gooood](https://github.com/MrParalloid/obsidian-things/blob/main/Iconize%20Custom%20Rules.png)
+
 Denis

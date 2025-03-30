@@ -1,7 +1,7 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 1.5.3
-@paralloid, 2025-03-27
+Version 1.5.4
+@paralloid, 2025-03-30
 ───────────────────────────────────────*/
 
 @charset "UTF-8";
@@ -195,7 +195,7 @@ body:not(.is-mobile) .workspace-tab-header-inner-close-button {
     animation: fade-in 0.4s;
 }
 
-.workspace-tab-header.is-active {
+body.is-focused .workspace-split.mod-vertical.mod-root .workspace-tab-header.is-active {
     box-shadow: 0 0px 6px rgba(0, 0, 0, 0.2);
     color: var(--text-extreme);
 }
@@ -1024,7 +1024,6 @@ body.is-phone {
   border-left: none;
 }
 
-/* 📺 Optimize YouTube Embeds */
 iframe[src*="youtu"] {
     width: 100%;
     border-radius: 6px
@@ -1108,7 +1107,6 @@ body:not(.is-mobile) .view-content img:active {
 }
 
 body:not(.is-mobile) .view-content .markdown-preview-view img[referrerpolicy='no-referrer']:active,
-
 body:not(.is-mobile) .view-content .image-embed:active {
   background:var(--background-primary);
   cursor:zoom-out;

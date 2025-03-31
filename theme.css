@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 2.0.3
+Version 2.0.4
 @paralloid, 2025-04-01
 ───────────────────────────────────────*/
 
@@ -215,7 +215,7 @@ body.is-tablet.theme-dark.tablet-full-black {
     }
 }
 
-.workspace-tab-header {
+.workspace-tabs:not(.mod-stacked) .workspace-tab-header {
     transition: background-color 0.2s ease;
     margin-top: 5px;
 }
@@ -232,7 +232,7 @@ body.is-tablet.theme-dark.tablet-full-black {
 /*    padding: 0px 0px 0;*/
 }
 
-.workspace-tab-header-inner-title {
+.workspace-tabs:not(.mod-stacked) .workspace-tab-header-inner-title {
     padding-left: 3px;
 }
 
@@ -253,7 +253,7 @@ body.button-close-left .workspace-tabs .workspace-tab-header-inner-icon {
     order: 1
     }
 
-.workspace-tabs .workspace-tab-header-inner-icon { 
+.workspace-tabs:not(.mod-stacked) .workspace-tab-header-inner-icon { 
     max-height: 20px;
     max-width: 20px;
     }
@@ -306,7 +306,7 @@ body.is-tablet {
     --titlebar-background: var(--background-secondary) !important;
 }
 
-body.is-tablet .workspace-tab-header.is-active {
+body.is-tablet .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
     font-weight: 600;
     transition: font-weight 0.1s ease-in;
     color: var(--text-extreme);
@@ -314,7 +314,7 @@ body.is-tablet .workspace-tab-header.is-active {
     box-shadow: 0 0px 6px rgba(0, 0, 0, 0.3);
 }
 
-body.is-tablet .workspace-tab-header-inner-title {
+body.is-tablet .workspace-tabs:not(.mod-stacked) .workspace-tab-header-inner-title {
     padding-right: 12px;
 }
 

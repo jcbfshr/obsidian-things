@@ -574,7 +574,7 @@ body.is-tablet .prompt {
         transition: height 0.3s ease-out;
 }
 
-body.is-mobile .mod-settings {
+.mod-settings {
     --accent-color: #3188f4 !important;
     --text-on-accent: #ffffff !important;
 }

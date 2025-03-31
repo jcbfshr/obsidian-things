@@ -1,6 +1,6 @@
 # Things 3 theme for Obsidian
-Version: 1.5.4
-Updated: 2025-03-30
+Version: 2.0
+Updated: 2025-03-31
 
 This theme is aimed to provide consistent experience to those who use Obsidian together with Things 3. It has been tested on macOS, iPadOS, and iOS only.
 Just my take on Things 3 integration, by providing visual consistency between the two applications. 
@@ -11,7 +11,7 @@ Don't mix it with legendary [Things Theme](https://www.google.com/url?sa=t&sourc
 
 ## Features
 - Exact color match with Things 3 for Light and Dark options, Desktop and Mobile
-- Things 3 like Animations
+- Things 3 like Animations, including Pull Down menu on mobiles
 - Things 3 like Sidebar
 - Things 3 like Quick Switcher
 - Things 3 like Menus
@@ -19,10 +19,12 @@ Don't mix it with legendary [Things Theme](https://www.google.com/url?sa=t&sourc
 - Things 3 like Mobile Toolbar (kudos to [Alex the Creator of Cupertino theme](https://github.com/aaaaalexis) for some of the code I borrowed)
 - Hidden Tab Close button until hover for more space
 - Fancy highlighter
-- Black background for Dark theme on Mobiles
 - Prettified Code Blocks
 - Full-size YT Previews
 - Full-width Mobile sidebars
+- Style Settings support
+- Black background for Dark theme on Mobiles
+- Ability to have Tab Close button on the left
 - Custom checkboxes by [Kepano](https://stephango.com)
 
 ## Integrations

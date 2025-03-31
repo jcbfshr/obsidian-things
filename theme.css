@@ -772,6 +772,9 @@ body.is-phone {
     border-left: none;
 }
 
+.tree-item-flair-outer {
+    margin-right: 12pt
+}
 
 @media (prefers-reduced-motion: reduce) {
     .nav-folder-children {

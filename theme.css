@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 2.0.2
+Version 2.0.3
 @paralloid, 2025-04-01
 ───────────────────────────────────────*/
 
@@ -1631,7 +1631,7 @@ body:not(.tasks) li[data-task='D'].task-list-item.is-checked {
     margin-left: 5px;
     margin-right: 5px;
     padding-top: 7px;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     padding-right: 7px;
     padding-left: 7px;
 /*    box-shadow: 0 0px 6px rgba(0, 0, 0, 0.2);*/
@@ -1663,6 +1663,12 @@ body {
 
 .dnc td:hover:not(:empty), .dnc th:hover:not(:empty) {
     background-color: var(--background-modifier-active-hover);
+    color: #ffffff;
+    border-radius: 4px;
+}
+
+.dnc li:hover, .dnc li:hover {
+    background-color: var(--background-primary);
     color: #ffffff;
     border-radius: 4px;
 }
@@ -1701,13 +1707,21 @@ body {
 
 .dnc .buttons svg.lucide.lucide-chevron-left {
     stroke-width: 3px;
-    color: var(--text-normal);
+    opacity: 0.3;
+    }
+
+.dnc .buttons svg.lucide.lucide-chevrons-left {
+    stroke-width: 3px;
     opacity: 0.3;
     }
 
 .dnc .buttons svg.lucide.lucide-chevron-right {
     stroke-width: 3px;
-    color: var(--text-normal);
+    opacity: 0.3;
+    }
+    
+.dnc .buttons svg.lucide.lucide-chevrons-right {
+    stroke-width: 3px;
     opacity: 0.3;
     }
 
@@ -1800,6 +1814,10 @@ body {
     font-family: var(--font-text);
     font-size: var(--font-text-size);
     font-weight: normal;
+}
+
+.arrow.svelte-156w7na.svelte-156w7na:hover {
+    --color-arrow: var(--color-accent)!important;
 }
 
 /* INK */

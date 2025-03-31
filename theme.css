@@ -1,8 +1,37 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 1.5.4
-@paralloid, 2025-03-30
+Version 2.0
+@paralloid, 2025-03-31
 ───────────────────────────────────────*/
+
+/* @settings
+
+name: Things 3 Settings
+id: things-3-settings
+settings:
+
+    -
+        id: mobile-full-black
+        title: Use Fully Black Backgrounds on Mobiles
+        type: class-toggle
+        default: true
+    -
+        id: tablet-full-black
+        title: Use Fully Black Background on Tablets
+        type: class-toggle
+        default: true
+    - 
+        id: dataview-no-wrap
+        title: Dataview rows in no-wrap format
+        type: class-toggle
+        default: true
+    -
+        id: button-close-left
+        title: Tab close button on the left
+        type: class-toggle
+        default: false
+*/
+
 
 @charset "UTF-8";
 body {
@@ -33,8 +62,6 @@ body {
 
 /* DARK MODE COLORS */
 .theme-dark {
-/*    --accent-color: #67acff;*/
-/*    --color-accent: #67acff !important;*/
     --accent-color: #4d94f7;
     --color-accent: #4d94f7 !important;
     --accent-h: 213 !important;
@@ -61,8 +88,7 @@ body.theme-dark {
 }
 
 /* FULL BLACK BACKGROUND FOR MOBILE DEVICES */
-@media (hover: none) and (pointer: coarse) {
-    .theme-dark {
+body.is-phone.theme-dark.mobile-full-black {
         --background-primary: #000000 !important;
         --background-secondary: #000000 !important;
         --background-secondary-alt: #2b3138 !important;
@@ -71,7 +97,16 @@ body.theme-dark {
         --modal-background: #2b3138 !important;
         --popup-background: #2b3138 !important;
     }
-}
+    
+body.is-tablet.theme-dark.tablet-full-black {
+        --background-primary: #000000 !important;
+        --background-secondary: #000000 !important;
+        --background-secondary-alt: #2b3138 !important;
+        --titlebar-background-focused: #000000 !important;
+        --dropdown-background: #2b3138 !important;
+        --modal-background: #2b3138 !important;
+        --popup-background: #2b3138 !important;
+    }
 
 /* LIGHT MODE COLORS */
 .theme-light {
@@ -82,8 +117,6 @@ body.theme-dark {
     --accent-l: 38% !important;
     --background-primary: #ffffff; 
     --background-secondary: #f9fafb;
-    --titlebar-background-focused: #f9fafb;
-    --titlebar-background: #f9fafb;
     --text-normal: #2d2e34;
     --text-muted: #595959;
     --text-on-accent: #ffffff !important;
@@ -182,17 +215,46 @@ body.theme-light {
     padding-left: 3px;
 }
 
-/*.workspace-tab-header-inner-close-button { order: -1; }*/
+body.button-close-left .workspace-tab-header-inner-title {
+    padding-left: 20px;
+}
+
+body.button-close-left .workspace-tab-header-inner-close-button {
+    order: -1;
+}
+
+body.button-close-left:not(.is-mobile) .workspace-tab-header-inner-close-button {
+    background-color: transparent;
+    padding: 0px;
+}
+
+body.button-close-left .workspace-tabs .workspace-tab-header-inner-icon { 
+    order: 1
+    }
+
+.workspace-tabs .workspace-tab-header-inner-icon { 
+    max-height: 20px;
+    max-width: 20px;
+    }
+
 
 body:not(.is-mobile) .workspace-tab-header-inner-close-button {
     display: none;
+    background-color: transparent;
 }
 
 .workspace-tabs:not(.mod-stacked) .workspace-tab-header:hover .workspace-tab-header-inner-close-button,
 .workspace-tab-header.is-active .workspace-tab-header-inner-close-button {
     pointer-events: all;
-    margin-left: -2px;
-    animation: fade-in 0.4s;
+    animation: fade-in 0.4s
+}
+
+body.button-close-left .workspace-tabs:not(.mod-stacked) .workspace-tab-header:hover .workspace-tab-header-inner-close-button,
+.workspace-tab-header.is-active .workspace-tab-header-inner-close-button {
+    pointer-events: all;
+    margin-left: 0px !important;
+    margin-right: -18px !important;
+    animation: fade-in 0.4s
 }
 
 body.is-focused .workspace-split.mod-vertical.mod-root .workspace-tab-header.is-active {
@@ -200,11 +262,36 @@ body.is-focused .workspace-split.mod-vertical.mod-root .workspace-tab-header.is-
     color: var(--text-extreme);
 }
 
+
+/* SOME LOVE TO TABLETS */
+
+body.is-tablet .workspace-drawer-header,
+body.is-tablet .titlebar,
+body.is-tablet .workspace-tab-header-container,
+body.is-tablet .workspace-split,
+body.is-tablet .workspace-leaf {
+    background-color: var(--background-secondary) !important;
+}
+
+body.is-tablet {
+    --titlebar-background: var(--background-secondary);
+    --mobile-sidebar-background: var(--background-secondary);
+    --titlebar-background: var(--background-secondary) !important;
+}
+
 body.is-tablet .workspace-tab-header.is-active {
     font-weight: 600;
     transition: font-weight 0.1s ease-in;
     color: var(--text-extreme);
+    height: 35px !important;
+    box-shadow: 0 0px 6px rgba(0, 0, 0, 0.3);
 }
+
+body.is-tablet .workspace-tab-header-inner-title {
+    padding-right: 12px;
+}
+
+/* TITLE & EMBEDS */
 
 .inline-title { 
     color: var(--text-extreme) !important;
@@ -230,6 +317,47 @@ body.is-tablet .workspace-tab-header.is-active {
     opacity: 1;
     transition: opacity 0.1s ease-in;
     background: var(--background-primary);
+}
+
+/* Pull Action WIP */
+
+.pull-action {
+  position: absolute;
+  background-color: var(--background-secondary);
+  z-index: var(--layer-popover);
+  color: transparent;
+  transition: background-color ease-in-out 150ms;
+}
+
+.pull-action.mod-activated {
+  background-color: var(--interactive-accent);
+  color: transparent;
+}
+
+.pull-down-action {
+  top: 0;
+  left: 0;
+  right: 0;
+  max-width: 50px;
+  max-height: 50px;
+  margin: var(--safe-area-inset-top) auto 0 auto;
+  padding: var(--size-8-3) var(--size-8-4);
+  color: transparent;
+  border-radius: 100px;
+  border-color: #fff;
+  transition: 0.5s; 
+  background-position: 50% 50%;
+  background-size: 100% 100%;
+  background-image:url("data:image/svg+xml;base64,PCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KDTwhLS0gVXBsb2FkZWQgdG86IFNWRyBSZXBvLCB3d3cuc3ZncmVwby5jb20sIFRyYW5zZm9ybWVkIGJ5OiBTVkcgUmVwbyBNaXhlciBUb29scyAtLT4KPHN2ZyB3aWR0aD0iODAwcHgiIGhlaWdodD0iODAwcHgiIHZpZXdCb3g9Ii01LjA0IC01LjA0IDM0LjA4IDM0LjA4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0cm9rZT0iI2ZmZmZmZiI+Cg08ZyBpZD0iU1ZHUmVwb19iZ0NhcnJpZXIiIHN0cm9rZS13aWR0aD0iMCI+Cg08cmVjdCB4PSItNS4wNCIgeT0iLTUuMDQiIHdpZHRoPSIzNC4wOCIgaGVpZ2h0PSIzNC4wOCIgcng9IjE3LjA0IiBmaWxsPSIjNGQ5NGY3IiBzdHJva2V3aWR0aD0iMCIvPgoNPC9nPgoNPGcgaWQ9IlNWR1JlcG9fdHJhY2VyQ2FycmllciIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cg08ZyBpZD0iU1ZHUmVwb19pY29uQ2FycmllciI+IDxwYXRoIGQ9Ik0xNS43OTU1IDE1LjgxMTFMMjEgMjFNMTggMTAuNUMxOCAxNC42NDIxIDE0LjY0MjEgMTggMTAuNSAxOEM2LjM1Nzg2IDE4IDMgMTQuNjQyMSAzIDEwLjVDMyA2LjM1Nzg2IDYuMzU3ODYgMyAxMC41IDNDMTQuNjQyMSAzIDE4IDYuMzU3ODYgMTggMTAuNVoiIHN0cm9rZT0iI2ZmZmZmIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPiA8L2c+Cg08L3N2Zz4=");
+  -webkit-mask-size: 100%;
+  -webkit-mask-repeat:no-repeat;
+  animation: fade-in 0.3s;
+}
+.pull-out-action {
+  top: 50%;
+  padding: var(--size-4-3) var(--size-4-4);
+  border-radius: 40px;
+  margin: 0 var(--size-4-4);
 }
 
 
@@ -991,6 +1119,9 @@ body {
     border: solid 1px;
     font-weight: 400;
     max-width: 100%;
+}
+
+body.dataview-no-wrap .table-view-table > tbody > tr > td  {
     white-space: nowrap !important;
 }
 

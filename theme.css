@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 2.0.4
+Version 2.0.5
 @paralloid, 2025-04-01
 ───────────────────────────────────────*/
 
@@ -215,6 +215,8 @@ body.is-tablet.theme-dark.tablet-full-black {
     }
 }
 
+/* TABS */
+
 .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
     transition: background-color 0.2s ease;
     margin-top: 5px;
@@ -227,12 +229,11 @@ body.is-tablet.theme-dark.tablet-full-black {
     padding-top: 10px;
 }
 
-.workspace-tab-header-container-inner {
+.workspace-tabs:not(.mod-stacked) .workspace-tab-header-container-inner {
     margin: 3px 15px calc(var(--tab-outline-width)* -1);
-/*    padding: 0px 0px 0;*/
 }
 
-.workspace-tabs:not(.mod-stacked) .workspace-tab-header-inner-title {
+.workspace-tab-header-inner-title {
     padding-left: 3px;
 }
 
@@ -253,7 +254,7 @@ body.button-close-left .workspace-tabs .workspace-tab-header-inner-icon {
     order: 1
     }
 
-.workspace-tabs:not(.mod-stacked) .workspace-tab-header-inner-icon { 
+.workspace-tab-header-inner-icon { 
     max-height: 20px;
     max-width: 20px;
     }
@@ -271,7 +272,7 @@ body:not(.is-mobile) .workspace-tab-header-inner-close-button {
 }
 
 body.button-close-left .workspace-tabs:not(.mod-stacked) .workspace-tab-header:hover .workspace-tab-header-inner-close-button,
-.workspace-tab-header.is-active .workspace-tab-header-inner-close-button {
+.workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active .workspace-tab-header-inner-close-button {
     pointer-events: all;
     margin-left: 0px !important;
     margin-right: -18px !important;
@@ -314,8 +315,12 @@ body.is-tablet .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active
     box-shadow: 0 0px 6px rgba(0, 0, 0, 0.3);
 }
 
-body.is-tablet .workspace-tabs:not(.mod-stacked) .workspace-tab-header-inner-title {
+body.is-tablet .workspace-tab-header-inner-title {
     padding-right: 12px;
+}
+
+body.is-tablet.body.button-close-left .workspace-tab-header-inner-title {
+    padding-right: 0px !important;
 }
 
 /* TITLE & EMBEDS */
@@ -1698,7 +1703,6 @@ body {
     width: 24px;
     height: 24px;
 }
-
 
 .dnc .buttons svg.lucide.lucide-calendar-heart {
     color: transparent !important;

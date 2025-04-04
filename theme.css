@@ -1,7 +1,7 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 2.0.5
-@paralloid, 2025-04-01
+Version 2.0.6
+@paralloid, 2025-04-04
 ───────────────────────────────────────*/
 
 /* @settings
@@ -45,7 +45,8 @@ body {
     --color-cyan-rgb: rgb(84, 173, 164);
     --color-cyan: #54ada4 !important;
     --color-blue: #23abf2 !important;
-    --color-grey: #6a6a6a !important;
+/*    --color-grey: #6a6a6a !important;*/
+    --color-grey: #818893 !important;
     --anim-motion-jumpy: cubic-bezier(.42,.81,.54,1.18);
     --font-semibold: 500;
     --font-bold: 600;
@@ -58,6 +59,8 @@ body {
     --p-spacing-empty: 0rem;
     --list-spacing: 0em;
     --checkbox-color: var(--color-accent);
+    --icon-color: var(--color-grey) !important;
+    --icon-stroke: 1.5px !important;
 }
 
 /* DESKTOP DARK MODE COLORS */
@@ -279,8 +282,13 @@ body.button-close-left .workspace-tabs:not(.mod-stacked) .workspace-tab-header:h
     animation: fade-in 0.4s
 }
 
-body.is-focused .workspace-split.mod-vertical.mod-root .workspace-tab-header.is-active {
+body.is-focused.theme-light .workspace-split.mod-vertical.mod-root .workspace-tab-header.is-active {
     box-shadow: 0 0px 6px rgba(0, 0, 0, 0.2);
+    color: var(--text-extreme);
+}
+
+body.is-focused.theme-dark .workspace-split.mod-vertical.mod-root .workspace-tab-header.is-active {
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.5);
     color: var(--text-extreme);
 }
 
@@ -545,7 +553,6 @@ body.is-mobile .menu-item-icon {
     animation: zoom-in 0.05s ease-out;
     transform-origin: top center;
     border-radius: 10px;
-    background-color: #f5f6f8;
 }
 
 .theme-light .prompt {
@@ -554,7 +561,7 @@ body.is-mobile .menu-item-icon {
 }
 
 .theme-dark .prompt {
-    box-shadow: 0 0px 18px rgba(0, 0, 0, 0.9);
+    box-shadow: 0 5px 22px rgba(0, 0, 0, 1);
     background-color: var(--modal-background) !important;
 }
 
@@ -1137,6 +1144,10 @@ body {
   margin: 0 1px !important;
 }
 
+.dataview {
+    transition: none !important;
+}
+
 .table-view-th {
     font-size: 1em !important;
     font-weight: 500 !important;
@@ -1642,7 +1653,6 @@ body:not(.tasks) li[data-task='D'].task-list-item.is-checked {
     padding-bottom: 10px;
     padding-right: 7px;
     padding-left: 7px;
-/*    box-shadow: 0 0px 6px rgba(0, 0, 0, 0.2);*/
 }
 
 .dnc .header h1 {
@@ -1653,6 +1663,7 @@ margin-left: 9px;
 margin-right: -7px;
 padding-top: 8px;
 padding-bottom: 10px;
+padding-right: 3px;
 }
 
 .dnc li {
@@ -1712,24 +1723,28 @@ body {
     -webkit-mask-repeat: no-repeat;
 }
 
+body {
+    --dnc-stroke: 1.5px;
+}
+
 .dnc .buttons svg.lucide.lucide-chevron-left {
-    stroke-width: 3px;
-    opacity: 0.3;
+    stroke-width: var(--dnc-stroke);
+    color: var(--icon-color)
     }
 
 .dnc .buttons svg.lucide.lucide-chevrons-left {
-    stroke-width: 3px;
-    opacity: 0.3;
+    stroke-width: var(--dnc-stroke);
+    color: var(--icon-color)
     }
 
 .dnc .buttons svg.lucide.lucide-chevron-right {
-    stroke-width: 3px;
-    opacity: 0.3;
+    stroke-width: var(--dnc-stroke);
+    color: var(--icon-color)
     }
     
 .dnc .buttons svg.lucide.lucide-chevrons-right {
-    stroke-width: 3px;
-    opacity: 0.3;
+    stroke-width: var(--dnc-stroke);
+    color: var(--icon-color)
     }
 
 .dnc .buttons {
@@ -1743,14 +1758,11 @@ body {
 
 .dnc .has-note {
     font-weight: var(--font-bold);
-}
-
-.dnc .has-note {
     color: var(--text-extreme);
 }
 
 .dnc ul li .note-title {
-    font-weight: var(--font-semibold);
+    font-weight: var(--font-bold);
     font-size: var(--font-normal);
 }
 

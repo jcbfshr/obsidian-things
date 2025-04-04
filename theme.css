@@ -1688,7 +1688,8 @@ body {
 
 .dnc li:hover, .dnc li:hover {
     background-color: var(--background-primary);
-    color: #ffffff;
+    .theme-light color: #ffffff;
+    .theme-dark color: #000000;
     border-radius: 4px;
 }
 

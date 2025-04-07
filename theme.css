@@ -1,7 +1,7 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 2.0.7
-@paralloid, 2025-04-04
+Version 2.0.8
+@paralloid, 2025-04-07
 ───────────────────────────────────────*/
 
 /* @settings
@@ -62,6 +62,7 @@ body {
     --icon-color: var(--color-grey) !important;
     --icon-stroke: 1.5px !important;
     --icon-l-stroke-width: 1.5px !important;
+    --embed-padding: 0px;
 }
 
 /* DESKTOP DARK MODE COLORS */
@@ -968,10 +969,10 @@ display: none;
 .markdown-preview-view h2,
 .HyperMD-header-2 {
     font-weight: 600 !important;
-    margin-top: 0px !important;
+    margin-top: 1rem !important;
     margin-bottom: 0.9em !important;
     padding-top: 10px !important;
-    padding-bottom: 0.25em !important;
+    padding-bottom: 0.25rem !important;
     border-bottom: 1px solid var(--div-color); 
 }
 
@@ -1184,8 +1185,8 @@ body.dataview-no-wrap .table-view-table > tbody > tr > td  {
 }
 
 .markdown-rendered table {
-    margin-block-start: 0.4em;
-    margin-block-end: 0.2em;
+    margin-block-start: 1em;
+    margin-block-end: 1.5em;
     word-break: normal;
 }
 

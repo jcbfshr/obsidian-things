@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 2.0.8
+Version 2.0.9
 @paralloid, 2025-04-07
 ───────────────────────────────────────*/
 
@@ -79,7 +79,7 @@ body {
     --titlebar-background: #212121;
     --text-on-accent: #1f1f1f;
     --text-extreme: #ffffff;
-    --div-color: rgba(60, 60, 60, 0.9);
+    --div-color: rgba(70, 70, 70, 0.9);
     --background-modifier-border: rgba(0, 0, 0, 0.2);
     --tag-color: #f1f1f1;
     --checklist-done-color: #8a919b;
@@ -154,7 +154,7 @@ body.is-tablet.theme-dark.tablet-full-black {
     --menu-background: #272d35;
     --background-modifier-border: rgba(200, 200, 200, 0.1);
     --text-extreme: #000000;
-    --div-color: rgba(200, 200, 200, 0.9);
+    --div-color: rgba(210, 210, 210, 0.5);
     --tag-color: #1e7d58;
     --checklist-done-color: #82868a;
     --color-accent-2: hsl(calc(var(--accent-h) - 0), calc(var(--accent-s) * 0.8), calc(var(--accent-l) * 1.35)) !important;
@@ -268,6 +268,15 @@ body.button-close-left .workspace-tabs .workspace-tab-header-inner-icon {
 body:not(.is-mobile) .workspace-tab-header-inner-close-button {
     display: none;
     background-color: transparent;
+}
+
+.workspace-tab-header-inner {
+    background-color: transparent;
+    border: solid;
+    border-width: 1px;
+    border-color: transparent;
+    margin-right: 4px;
+    margin-left: 4px;
 }
 
 .workspace-tabs:not(.mod-stacked) .workspace-tab-header:hover .workspace-tab-header-inner-close-button,
@@ -988,16 +997,20 @@ display: none;
 .markdown-preview-view h4,
 .HyperMD-header-4 {
     padding-bottom: 0px !important;
-    font-weight: 600 !important;
+    font-weight: 650 !important;
+    font-size: 1em;
     margin-top: 0px !important;
-    margin-bottom: 0px !important;
+    margin-bottom: 1.5em !important;
     padding-top: 0px !important;
+    border-bottom: 1px solid var(--div-color); 
+    padding-bottom: 0.25rem !important;
 }
 
 .markdown-preview-view h5,
 .HyperMD-header-5 {
     padding-bottom: 0px !important;
-    font-weight: 600 !important;
+    font-weight: 400 !important;
+    font-size: 1em;
     margin-top: 0px !important;
     margin-bottom: 0px !important;
     padding-top: 0px !important;
@@ -1006,8 +1019,10 @@ display: none;
 .markdown-preview-view h6,
 .HyperMD-header-6 {
     padding-bottom: 0px !important;
-    font-weight: 600 !important;
+    font-weight: 400 !important;
     margin-top: 0px !important;
+    font-size: 1em;
+    color: var(--color-accent);
     margin-bottom: 0px !important;
     padding-top: 0px !important;
 }

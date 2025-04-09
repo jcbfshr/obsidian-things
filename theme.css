@@ -1,7 +1,7 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 2.0.9
-@paralloid, 2025-04-07
+Version 2.0.10
+@paralloid, 2025-04-09
 ───────────────────────────────────────*/
 
 /* @settings
@@ -585,7 +585,9 @@ body.is-phone .prompt {
         animation: zoom-in 0.25s var(--anim-motion-jumpy) !important;
         box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5) !important;
         width: 90vw !important;
+        height: 80vw !important;
         transition: height 0.3s ease-out;
+        border-radius: 12px;
 }
 
 body.is-tablet .prompt {
@@ -799,12 +801,6 @@ body.is-phone {
     margin-right: 12pt
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .nav-folder-children {
-        transition: none !important;
-    }
-}
-
 .view-header-breadcrumb {
         color: var(--accent-color);
         font-weight: 600;
@@ -1000,7 +996,7 @@ display: none;
     font-weight: 650 !important;
     font-size: 1em;
     margin-top: 0px !important;
-    margin-bottom: 1.5em !important;
+    margin-bottom: 0em !important;
     padding-top: 0px !important;
     border-bottom: 1px solid var(--div-color); 
     padding-bottom: 0.25rem !important;

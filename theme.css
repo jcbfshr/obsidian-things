@@ -45,7 +45,6 @@ body {
     --color-cyan-rgb: rgb(84, 173, 164);
     --color-cyan: #54ada4 !important;
     --color-blue: #23abf2 !important;
-/*    --color-grey: #6a6a6a !important;*/
     --color-grey: #818893 !important;
     --anim-motion-jumpy: cubic-bezier(.42,.81,.54,1.18);
     --font-semibold: 500;
@@ -271,13 +270,12 @@ body:not(.is-mobile) .workspace-tab-header-inner-close-button {
 
 .mod-root .workspace-tab-header-inner {
     background-color: transparent;
-    border: solid;
     border-width: 1px;
     border-color: transparent;
-    margin-right: 4px;
-    margin-left: 4px;
+    margin-right: 2px;
+    margin-left: 2px;
     padding: 0 2px;
-    padding-inline-start: 2px;
+    padding-inline-start: 0px;
 }
 
 .workspace-tabs:not(.mod-stacked) .workspace-tab-header:hover .workspace-tab-header-inner-close-button,
@@ -1207,13 +1205,6 @@ body.dataview-no-wrap .table-view-table > tbody > tr > td  {
 /* ================== */
 
 
-/* 🏆 Improved Performance for Mobile */
-@media (hover: none) and (pointer: coarse) {
-    .modal-container {
-        backdrop-filter: none !important;
-    }
-}
-
 body.is-phone {
     --mobile-sidebar-width: 100%;
 }
@@ -1238,8 +1229,8 @@ iframe[src*="youtu"] {
 }
 
 .workspace-tab-header-new-tab .clickable-icon {
-    margin-left: -15px;
-    margin-top: 3px;
+    margin-left: -10px;
+    margin-top: 7px;
     --icon-size: var(--icon-s);
     align-items: center
 }

@@ -1,7 +1,7 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 2.0.10
-@paralloid, 2025-04-09
+Version 2.0.11
+@paralloid, 2025-04-10
 ───────────────────────────────────────*/
 
 /* @settings
@@ -235,11 +235,7 @@ body.is-tablet.theme-dark.tablet-full-black {
 }
 
 .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container-inner {
-    margin: 3px 15px calc(var(--tab-outline-width)* -1);
-}
-
-.workspace-tab-header-inner-title {
-    padding-left: 3px;
+    margin: 3px 0px calc(var(--tab-outline-width)* -1);
 }
 
 body.button-close-left .workspace-tab-header-inner-title {
@@ -262,21 +258,26 @@ body.button-close-left .workspace-tabs .workspace-tab-header-inner-icon {
 .workspace-tab-header-inner-icon { 
     max-height: 20px;
     max-width: 20px;
-    }
+}
 
+.workspace-tab-header-inner-title {
+    padding-left: 3px;
+}
 
 body:not(.is-mobile) .workspace-tab-header-inner-close-button {
     display: none;
     background-color: transparent;
 }
 
-.workspace-tab-header-inner {
+.mod-root .workspace-tab-header-inner {
     background-color: transparent;
     border: solid;
     border-width: 1px;
     border-color: transparent;
     margin-right: 4px;
     margin-left: 4px;
+    padding: 0 2px;
+    padding-inline-start: 2px;
 }
 
 .workspace-tabs:not(.mod-stacked) .workspace-tab-header:hover .workspace-tab-header-inner-close-button,

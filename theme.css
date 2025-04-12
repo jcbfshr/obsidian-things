@@ -1,7 +1,7 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 2.0.11
-@paralloid, 2025-04-10
+Version 2.1
+@paralloid, 2025-04-12
 ───────────────────────────────────────*/
 
 /* @settings
@@ -62,6 +62,7 @@ body {
     --icon-stroke: 1.5px !important;
     --icon-l-stroke-width: 1.5px !important;
     --embed-padding: 0px;
+    --menu-background: #2c3137;
 }
 
 /* DESKTOP DARK MODE COLORS */
@@ -150,7 +151,6 @@ body.is-tablet.theme-dark.tablet-full-black {
     --text-normal: #2d2e34;
     --text-muted: #595959;
     --text-on-accent: #ffffff !important;
-    --menu-background: #272d35;
     --background-modifier-border: rgba(200, 200, 200, 0.1);
     --text-extreme: #000000;
     --div-color: rgba(210, 210, 210, 0.5);
@@ -234,11 +234,7 @@ body.is-tablet.theme-dark.tablet-full-black {
 }
 
 .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container-inner {
-    margin: 3px 0px calc(var(--tab-outline-width)* -1);
-}
-
-body.button-close-left .workspace-tab-header-inner-title {
-    padding-left: 20px;
+    margin: 3px 5px calc(var(--tab-outline-width)* -1);
 }
 
 body.button-close-left .workspace-tab-header-inner-close-button {
@@ -250,6 +246,11 @@ body.button-close-left:not(.is-mobile) .workspace-tab-header-inner-close-button 
     padding: 0px;
 }
 
+/*
+.workspace-tabs:not(.mod-stacked) .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
+    padding-left: 5px !important;
+}*/
+    
 body.button-close-left .workspace-tabs .workspace-tab-header-inner-icon { 
     order: 1
     }
@@ -259,11 +260,12 @@ body.button-close-left .workspace-tabs .workspace-tab-header-inner-icon {
     max-width: 20px;
 }
 
-.workspace-tab-header-inner-title {
+.mod-root .workspace-tab-header-inner-title {
     padding-left: 3px;
+    padding-right: 3px;
 }
 
-body:not(.is-mobile) .workspace-tab-header-inner-close-button {
+body:not(.is-mobile) body.button-close-left .workspace-tab-header-inner-close-button {
     display: none;
     background-color: transparent;
 }
@@ -272,24 +274,26 @@ body:not(.is-mobile) .workspace-tab-header-inner-close-button {
     background-color: transparent;
     border-width: 1px;
     border-color: transparent;
-    margin-right: 2px;
-    margin-left: 2px;
-    padding: 0 2px;
-    padding-inline-start: 0px;
+    padding: 0 0px;
+    padding-inline-start: 4px;
 }
 
-.workspace-tabs:not(.mod-stacked) .workspace-tab-header:hover .workspace-tab-header-inner-close-button,
-.workspace-tab-header.is-active .workspace-tab-header-inner-close-button {
+.workspace-tabs:not(.mod-stacked) .workspace-tab-header:hover .workspace-tab-header-inner-close-button {
     pointer-events: all;
     animation: fade-in 0.4s
 }
 
 body.button-close-left .workspace-tabs:not(.mod-stacked) .workspace-tab-header:hover .workspace-tab-header-inner-close-button,
-.workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active .workspace-tab-header-inner-close-button {
+body.button-close-left .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active .workspace-tab-header-inner-close-button {
     pointer-events: all;
+    padding-left: 0px !important;
     margin-left: 0px !important;
     margin-right: -18px !important;
     animation: fade-in 0.4s
+}
+
+body.button-close-left .workspace-tab-header-inner-title {
+    padding-left: 20px;
 }
 
 body.is-focused.theme-light .workspace-split.mod-vertical.mod-root .workspace-tab-header.is-active {
@@ -369,7 +373,7 @@ body.is-tablet.body.button-close-left .workspace-tab-header-inner-title {
     background: var(--background-primary);
 }
 
-/* Pull Action WIP */
+/* Pull Action */
 
 .pull-action {
   position: absolute;
@@ -526,7 +530,15 @@ src: url('data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAXMAA4AAAAACOAAAAAAAA
     color: #ffffff !important;
 }
 
+body.is-phone .menu-grabber {
+    display: none;
+}
+
+body.is-phone .menu-scroll {
+    background-color: var(--menu-background);
+}
 body.is-mobile .menu {
+    background-color: var(--menu-background);
     position: fixed;
     margin: auto;
     overflow: auto;
@@ -538,6 +550,7 @@ body.is-mobile .menu {
 }
 
 body.is-mobile .menu-item {
+    color: #fafbfb;
     outline: none;
     margin: 3px;
     border-radius: 0 !important;
@@ -546,7 +559,7 @@ body.is-mobile .menu-item {
 
 
 body.is-mobile .menu-item-icon {
-    color: var(--accent-color);
+    color: #4f9eff;
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1366px) {
@@ -953,7 +966,6 @@ mark .external-link,
     transition: padding 0.1s linear;
 }
 
-
 .more-options-icon {
 display: none;
 }
@@ -1142,6 +1154,7 @@ body {
     margin-top: 35px;
     margin-bottom: 10px;
 }
+
 .HyperMD-hr-bg {
     display: none;
 }

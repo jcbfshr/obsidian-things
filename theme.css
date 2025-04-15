@@ -1,7 +1,7 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 2.1
-@paralloid, 2025-04-12
+Version 2.2
+@paralloid, 2025-04-15
 ───────────────────────────────────────*/
 
 /* @settings
@@ -30,6 +30,11 @@ settings:
         title: Tab close button on the left
         type: class-toggle
         default: false
+    -
+        id: smooth-animations 
+        title: Smooth fade-in for embedded content
+        type: class-toggle
+        default: true
 */
 
 
@@ -217,6 +222,32 @@ body.is-tablet.theme-dark.tablet-full-black {
     100% {
         opacity: 1;
     }
+}
+
+/* SMOOTH FADE-IN FOR EMBEDDED CONTENT */
+
+body.smooth-animations .pdf-toolbar {
+    opacity: 0; 
+    animation: fade-in 0.2s ease forwards;
+    animation-delay: 0.2s;
+}
+
+body.smooth-animations .pdf-container {
+    opacity: 0; 
+    animation: fade-in 0.2s ease forwards;
+    animation-delay: 0.1s;
+}
+
+body.smooth-animations .internal-embed img {
+    opacity: 0; 
+    animation: fade-in 0.2s ease forwards;
+    animation-delay: 0.1s;
+}
+
+body.smooth-animations .internal-embed .canvas-minimap {
+    opacity: 0; 
+    animation: fade-in 0.2s ease forwards;
+    animation-delay: 0.1s;
 }
 
 /* TABS */
@@ -537,6 +568,7 @@ body.is-phone .menu-grabber {
 body.is-phone .menu-scroll {
     background-color: var(--menu-background);
 }
+
 body.is-mobile .menu {
     background-color: var(--menu-background);
     position: fixed;

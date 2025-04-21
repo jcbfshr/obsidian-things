@@ -1,7 +1,7 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 2.2.1
-@paralloid, 2025-04-21
+Version 2.2.2
+@paralloid, 2025-04-22
 ───────────────────────────────────────*/
 
 /* @settings
@@ -387,25 +387,28 @@ body.is-tablet.body.button-close-left .workspace-tab-header-inner-title {
     padding-left: 10px;
     padding-top: 5px;
     padding-bottom: 0px;
-    padding-right: 25px;
+    padding-right: 28px;
     background-color: var(--background-secondary);
     border-radius: 6px;
 }
 
 .markdown-embed-link, .file-embed-link {
-    opacity: 0.2;
+    opacity: 0.4;
     transition: opacity 0.1s ease-in;
 }
 
 .markdown-embed-link .svg-icon {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='currentColor' stroke-width='1.8' viewBox='0 0 24 24'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  width: 1em;
-  height: 1em;
+  color: var(--icon-color);
+  background-color: currentColor;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='currentColor' stroke-width='1.8' viewBox='0 0 24 24'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='currentColor' stroke-width='1.8' viewBox='0 0 24 24'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
   display: inline-block;
-  -webkit-mask-image: none;
-  mask-image: none;
 }
 
 .markdown-embed-link .svg-icon > * {
@@ -819,7 +822,7 @@ body.is-phone {
     }
 }
 
-.tree-item-self .tree-item-icon {
+.nav-files-container .tree-item-self .tree-item-icon {
     position: absolute;
     right: 0;
     display: flex;

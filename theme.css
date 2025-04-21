@@ -1,7 +1,7 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 2.2
-@paralloid, 2025-04-15
+Version 2.2.1
+@paralloid, 2025-04-21
 ───────────────────────────────────────*/
 
 /* @settings
@@ -36,7 +36,6 @@ settings:
         type: class-toggle
         default: true
 */
-
 
 @charset "UTF-8";
 body {
@@ -394,14 +393,29 @@ body.is-tablet.body.button-close-left .workspace-tab-header-inner-title {
 }
 
 .markdown-embed-link, .file-embed-link {
-    opacity: 0.3;
+    opacity: 0.2;
     transition: opacity 0.1s ease-in;
+}
+
+.markdown-embed-link .svg-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='currentColor' stroke-width='1.8' viewBox='0 0 24 24'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.markdown-embed-link .svg-icon > * {
+  display: none;
 }
 
 .markdown-embed-link:hover, .file-embed-link:hover {
     opacity: 1;
     transition: opacity 0.1s ease-in;
-    background: var(--background-primary);
+    background: none;
 }
 
 /* Pull Action */
@@ -1920,4 +1934,14 @@ body {
 .ink_menu-bar button {
     box-shadow: none !important;
     border-radius: 6px;
+}
+
+body.zenmode-active:not(.is-mobile) .inline-title {
+    margin-top: 0.5em;
+}
+
+.zenmode-button {
+    bottom: 20px;
+    right: 20px;
+    opacity: 60%;
 }

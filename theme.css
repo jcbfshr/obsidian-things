@@ -1,7 +1,7 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 2.2.2
-@paralloid, 2025-04-22
+Version 2.2.3
+@paralloid, 2025-04-25
 ───────────────────────────────────────*/
 
 /* @settings
@@ -67,6 +67,9 @@ body {
     --icon-l-stroke-width: 1.5px !important;
     --embed-padding: 0px;
     --menu-background: #2c3137;
+    --tab-container-background: var(--background-secondary);
+    --titlebar-background-focused: var(--titlebar-background);
+    --ribbon-background: var(--titlebar-background);
 }
 
 /* DESKTOP DARK MODE COLORS */
@@ -80,7 +83,7 @@ body {
     --background-primary-alt: #2f2f2f;
     --background-secondary: #1f1f1f;
     --titlebar-background-focused: #1c1c1c;
-    --titlebar-background: #212121;
+    --titlebar-background: #1c1c1c;
     --text-on-accent: #1f1f1f;
     --text-extreme: #ffffff;
     --div-color: rgba(70, 70, 70, 0.9);
@@ -151,7 +154,7 @@ body.is-tablet.theme-dark.tablet-full-black {
     --accent-s: 100% !important;
     --accent-l: 38% !important;
     --background-primary: #ffffff; 
-    --background-secondary: #f9fafb;
+    --background-secondary: #f5f6f8;
     --text-normal: #2d2e34;
     --text-muted: #595959;
     --text-on-accent: #ffffff !important;
@@ -388,13 +391,15 @@ body.is-tablet.body.button-close-left .workspace-tab-header-inner-title {
     padding-top: 5px;
     padding-bottom: 0px;
     padding-right: 28px;
-    background-color: var(--background-secondary);
+    background-color: var(--background-primary);
     border-radius: 6px;
 }
 
 .markdown-embed-link, .file-embed-link {
+    top: 0;
+    bottom: 0;
     opacity: 0.4;
-    transition: opacity 0.1s ease-in;
+    background-color: var(--background-secondary);
 }
 
 .markdown-embed-link .svg-icon {
@@ -417,8 +422,9 @@ body.is-tablet.body.button-close-left .workspace-tab-header-inner-title {
 
 .markdown-embed-link:hover, .file-embed-link:hover {
     opacity: 1;
-    transition: opacity 0.1s ease-in;
+    transition: opacity 0.2s ease-in;
     background: none;
+    background-color: rgba(130,130,130, 0.1);
 }
 
 /* Pull Action */

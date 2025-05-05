@@ -1,7 +1,7 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 2.2.3
-@paralloid, 2025-04-25
+Version 2.2.4
+@paralloid, 2025-05-05
 ───────────────────────────────────────*/
 
 /* @settings
@@ -1029,7 +1029,7 @@ display: none;
 /* ====================== */
 /* ✨ Headings */
 /* ====================== */
-.markdown-preview-view h1,
+h1, .markdown-preview-view h1,
 .HyperMD-header-1 {
     font-weight: 600 !important;
     margin-top: 0px !important;
@@ -1037,7 +1037,7 @@ display: none;
     padding-top: 30px !important;
 }
 
-.markdown-preview-view h2,
+h2, .markdown-preview-view h2,
 .HyperMD-header-2 {
     font-weight: 600 !important;
     margin-top: 1rem !important;
@@ -1047,7 +1047,7 @@ display: none;
     border-bottom: 1px solid var(--div-color); 
 }
 
-.markdown-preview-view h3,
+h3, .markdown-preview-view h3,
 .HyperMD-header-3 {
     font-weight: 600 !important;
     margin-top: 0px !important;
@@ -1056,11 +1056,11 @@ display: none;
     padding-bottom: 0.25em !important;
 }
 
-.markdown-preview-view h4,
+h4, .markdown-preview-view h4,
 .HyperMD-header-4 {
     padding-bottom: 0px !important;
     font-weight: 650 !important;
-    font-size: 1em;
+    font-size: 1em !important;
     margin-top: 0px !important;
     margin-bottom: 0em !important;
     padding-top: 0px !important;
@@ -1068,22 +1068,22 @@ display: none;
     padding-bottom: 0.25rem !important;
 }
 
-.markdown-preview-view h5,
+h5, .markdown-preview-view h5,
 .HyperMD-header-5 {
     padding-bottom: 0px !important;
     font-weight: 400 !important;
-    font-size: 1em;
+    font-size: 1em !important;
     margin-top: 0px !important;
     margin-bottom: 0px !important;
     padding-top: 0px !important;
 }
 
-.markdown-preview-view h6,
+h6, .markdown-preview-view h6,
 .HyperMD-header-6 {
     padding-bottom: 0px !important;
     font-weight: 400 !important;
     margin-top: 0px !important;
-    font-size: 1em;
+    font-size: 1em !important;
     color: var(--color-accent);
     margin-bottom: 0px !important;
     padding-top: 0px !important;
@@ -1739,15 +1739,24 @@ body:not(.tasks) li[data-task='D'].task-list-item.is-checked {
     padding-left: 7px;
 }
 
+.dnc .header {
+    opacity: 1;
+}
+
 .dnc .header h1 {
 font-weight: 700;
 font-size: 1.4em;
 color: var(--accent-color);
 margin-left: 9px;
 margin-right: -7px;
-padding-top: 8px;
-padding-bottom: 10px;
+margin-bottom: 0px !important;
+padding-top: 0px !important;
+padding-bottom: 0px !important;
 padding-right: 3px;
+}
+
+.dnc .buttons {
+    padding-right: 5px;
 }
 
 .dnc li {
@@ -1814,27 +1823,26 @@ body {
 
 .dnc .buttons svg.lucide.lucide-chevron-left {
     stroke-width: var(--dnc-stroke);
-    color: var(--icon-color)
+    color: var(--icon-color);
+    margin-bottom: 5px;
     }
 
 .dnc .buttons svg.lucide.lucide-chevrons-left {
     stroke-width: var(--dnc-stroke);
-    color: var(--icon-color)
+    color: var(--icon-color);
+    margin-bottom: 5px;
     }
 
 .dnc .buttons svg.lucide.lucide-chevron-right {
     stroke-width: var(--dnc-stroke);
-    color: var(--icon-color)
+    color: var(--icon-color);
+    margin-bottom: 5px;
     }
     
 .dnc .buttons svg.lucide.lucide-chevrons-right {
     stroke-width: var(--dnc-stroke);
-    color: var(--icon-color)
-    }
-
-.dnc .buttons {
-    padding-right: 5px;
-    -webkit-mask-position: center;
+    color: var(--icon-color);
+    margin-bottom: 5px;
     }
     
 .dnc .has-note:after {
@@ -1943,6 +1951,10 @@ body {
 .ink_menu-bar button {
     box-shadow: none !important;
     border-radius: 6px;
+}
+
+body.is-phone .ddc_ink_resize-container {
+    max-width: 330px !important;
 }
 
 body.zenmode-active:not(.is-mobile) .inline-title {

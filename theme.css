@@ -1,7 +1,7 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 2.2.7
-@paralloid, 2025-05-11
+Version 2.2.8
+@paralloid, 2025-05-15
 ───────────────────────────────────────*/
 
 /* @settings
@@ -154,7 +154,7 @@ body.is-tablet.theme-dark.tablet-full-black {
     --accent-h: 210 !important;
     --accent-s: 100% !important;
     --accent-l: 38% !important;
-    --background-primary: #ffffff; 
+    --background-primary: #ffffff;
     --background-secondary: #f5f6f8;
     --checkbox-border-color: rgba(128,128,128,0.3);
     --text-normal: #2d2e34;
@@ -1349,6 +1349,10 @@ body.is-phone {
   border-left: none;
 }
 
+body.is-phone iframe {
+    max-width: 350px !important;
+}
+
 iframe[src*="youtu"] {
     width: 100%;
     border-radius: 6px
@@ -1428,8 +1432,6 @@ body:not(.is-mobile) .view-content img {
 
 body:not(.is-mobile) .view-content img:active {
   cursor:zoom-out;
-  animation: fade-in 0.2s ease-in;
-  transform-origin: center
 }
 
 body:not(.is-mobile) .view-content .markdown-preview-view img[referrerpolicy='no-referrer']:active,
@@ -1449,7 +1451,8 @@ body:not(.is-mobile) .view-content .image-embed:active {
   padding:0;
   left:0;
   right:0;
-  bottom:0
+  bottom:0;
+  animation: zoom-in 0.1s ease-out;
 }
 
 body:not(.is-mobile) .view-content .image-embed:active img {

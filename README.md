@@ -2,7 +2,7 @@
 Version: 2.3
 Updated: 2025-05-22
 
-**The theme is now compatible with 1.9. Unfortunately due to the changes in 1.9, the navbar on mobiles on previous versions is going to miss the Big Plus button. Looking forward to seeing 1.9 available in public soon. **
+**The theme is now compatible with 1.9. Unfortunately due to the changes in 1.9, the navbar on mobiles on previous versions is going to miss the Big Plus button. Looking forward to seeing 1.9 available in public soon.**
 
 This theme is aimed to provide consistent experience to those who use Obsidian together with Things 3. It has been tested on macOS, iPadOS, and iOS only.
 Just my take on Things 3 integration, by providing visual consistency between the two applications. 

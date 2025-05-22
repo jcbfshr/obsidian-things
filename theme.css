@@ -1,7 +1,7 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 2.2.9
-@paralloid, 2025-05-16
+Version 2.3
+@paralloid, 2025-05-22
 ───────────────────────────────────────*/
 
 /* @settings
@@ -25,6 +25,11 @@ settings:
         title: Dataview rows in no-wrap format
         type: class-toggle
         default: true
+    - 
+        id: dataview-style
+        title: Enable or disable Tables & Dataview styling
+        type: class-toggle
+        default: true
     -
         id: button-close-left
         title: Tab close button on the left
@@ -35,6 +40,11 @@ settings:
         title: Smooth fade-in for embedded content
         type: class-toggle
         default: true
+    -
+        id: old-navbar
+        title: Switch to the pre-1.9 Mobile navigation bar
+        type: class-toggle
+        default: false
 */
 
 @charset "UTF-8";
@@ -70,6 +80,7 @@ body {
     --tab-container-background: var(--background-secondary);
     --titlebar-background-focused: var(--titlebar-background);
     --ribbon-background: var(--titlebar-background);
+    --pill-border-width: 1px !important;
 }
 
 /* DESKTOP DARK MODE COLORS */
@@ -93,6 +104,7 @@ body {
     --checklist-done-color: #8a919b;
     --color-accent-2: hsl(calc(var(--accent-h) - 0), calc(var(--accent-s) * 0.8), calc(var(--accent-l) * 0.85)) !important;
     --code-background: #3B3B3B;
+    --pill-background: rgb(20,20,20);
 }
 
 /* MOBILE DARK MODE COLORS */
@@ -167,6 +179,7 @@ body.is-tablet.theme-dark.tablet-full-black {
     --checklist-done-color: #82868a;
     --color-accent-2: hsl(calc(var(--accent-h) - 0), calc(var(--accent-s) * 0.8), calc(var(--accent-l) * 1.35)) !important;
     --code-background: #f9f9f9;
+    --pill-background: rgb(235,235,235);
 }
 
 /* ANIMATIONS */
@@ -409,7 +422,7 @@ body.is-tablet.body.button-close-left .workspace-tab-header-inner-title {
     padding-bottom: 0px;
     padding-right: 28px;
     background-color: var(--background-primary);
-    border-radius: 6px;
+    border-radius: 2px;
 }
 
 .markdown-embed-link, .file-embed-link {
@@ -417,7 +430,9 @@ body.is-tablet.body.button-close-left .workspace-tab-header-inner-title {
     bottom: 0;
     right: 0;
     opacity: 0.4;
+    max-width: 20px;
     background-color: var(--div-color);
+    border-radius: 2px;
 }
 
 .markdown-embed-link .svg-icon {
@@ -440,9 +455,6 @@ body.is-tablet.body.button-close-left .workspace-tab-header-inner-title {
 
 .markdown-embed-link:hover, .file-embed-link:hover {
     opacity: 1;
-    transition: opacity 0.2s ease-in;
-    background: none;
-    background-color: rgba(130,130,130, 0.1);
 }
 
 /* Pull Action */
@@ -572,10 +584,24 @@ src: url('data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAXMAA4AAAAACOAAAAAAAA
 
 /* styling tags in properties */
 
+.metadata-property-value {
+    --pill-border-width: 6px;
+    --pill-padding-x: 10px !important;
+    --pill-padding-y: 1px !important;
+}
+
+.multi-select-pill {
+    border: solid 1px var(--pill-background);
+}
+
 .theme-dark .metadata-property:is([data-property-key="tags"]) .multi-select-pill {
     color: #f1f1f1 !important;
     font-weight: 500;
     background-color: #2f7155 !important;
+}
+
+.theme-dark .metadata-property:is([data-property-key="tags"]) .multi-select-pill-remove-button {
+    color: #f1f1f1 !important;
 }
 
 .theme-light .metadata-property:is([data-property-key="tags"]) .multi-select-pill {
@@ -584,6 +610,10 @@ src: url('data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAXMAA4AAAAACOAAAAAAAA
     background-color: #c3e1d3 !important;
     border: none !important;
     text-decoration: none !important;
+}
+
+.theme-light .metadata-property:is([data-property-key="tags"]) .multi-select-pill-remove-button {
+    color: #61987c !important;
 }
 
 .theme-dark .workspace-tab-header-container,
@@ -676,10 +706,11 @@ body.is-phone .prompt {
         background-color: var(--modal-background) !important;
         animation: zoom-in 0.25s var(--anim-motion-jumpy) !important;
         box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5) !important;
-        width: 90vw !important;
-        height: 80vw !important;
+        max-width: 90vw !important;
+        max-height: 90vw !important;
         transition: height 0.3s ease-out;
         border-radius: 12px;
+        padding-bottom: 5vw;
 }
 
 body.is-tablet .prompt {
@@ -784,7 +815,6 @@ input.prompt-input {
     align-items: center !important;
     gap: 8px;
 }
-
 
 /* Add icon to the left of each suggestion item */
 .modal-container .suggestion-item::before {
@@ -1282,19 +1312,19 @@ input[type=checkbox]:checked:after {
 /*      📌 DATAVIEW      */
 /* ===================== */
 
-.dataview.inline-field {
+body.dataview-style .dataview.inline-field {
   padding: 2px 2px !important;
   border-color: var(--div-color) !important;
   font-size: 0.8em !important;
   margin: 0 1px !important;
 }
 
-.dataview.result-group {
+body.dataview-style .dataview.result-group {
     padding-left: 0px;
 }
 
-.dataview.task-list-item:hover,
-.dataview.task-list-basic-item:hover {
+body.dataview-style .dataview.task-list-item:hover,
+body.dataview-style .dataview.task-list-basic-item:hover {
     background-color: var(--background-primary) !important;
     box-shadow: -40px 0 0 var(--background-primary) !important;
 }
@@ -1303,8 +1333,8 @@ input[type=checkbox]:checked:after {
     transition: none !important;
 }
 
-.dataview.task-list-item:hover,
-.dataview.task-list-basic-item:hover {
+body.dataview-style .dataview.task-list-item:hover,
+body.dataview-style .dataview.task-list-basic-item:hover {
     background-color: var(--background-secondary);
     box-shadow: -40px 0 0 var(--background-secondary);
     }
@@ -1313,19 +1343,19 @@ input[type=checkbox]:checked:after {
     box-shadow: 0 0 0;
 }
     
-.table-view-th {
+body.dataview-style .table-view-th {
     font-size: 1em !important;
     font-weight: 500 !important;
 }
 
-.table-view-table > thead > tr > th {
+body.dataview-style .table-view-table > thead > tr > th {
     font-weight: 500;
     font-size: larger;
     border: solid 1px;
     background-color: var(--background-secondary) !important;
 }
 
-.table-view-table > tbody > tr > td {
+body.dataview-style .table-view-table > tbody > tr > td {
     text-align: left;
     border: solid 1px;
     font-weight: 400;
@@ -1384,40 +1414,66 @@ iframe[src*="youtu"] {
 .workspace .mod-root .workspace-tab-header-inner::after {
     background: none;
     }
+    
+body.is-tablet .workspace-tab-header-container {
+    height: 42px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+body.is-mobile .workspace-leaf-content .nav-header {
+    order: 2;
+}
 
 /* Mobile bottom bar icons */
 
-.mobile-navbar-action:nth-child(3) .clickable-icon {
+body.old-navbar .mobile-navbar-action-forward {
+    display: flex;
+}
+
+body.old-navbar .mobile-navbar-action-new-tab {
+    display: none;
+}
+
+.mobile-navbar-action-new-tab .clickable-icon svg {
     color: transparent;
     background-color: transparent;
-    width:42px;
-    height:42px;
     content:"";
-    background-position: 50% 50%;
+    height: 42px;
+    width: 42px;
     background-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-size: 100% 100%;
     background-image:url("data:image/svg+xml;base64,PCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KDTwhLS0gVXBsb2FkZWQgdG86IFNWRyBSZXBvLCB3d3cuc3ZncmVwby5jb20sIFRyYW5zZm9ybWVkIGJ5OiBTVkcgUmVwbyBNaXhlciBUb29scyAtLT4KPHN2ZyBmaWxsPSIjZmZmZmZmIiB3aWR0aD0iMjU2cHgiIGhlaWdodD0iMjU2cHgiIHZpZXdCb3g9Ii0xMS41MiAtMTEuNTIgODcuMDQgODcuMDQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM6c2VyaWY9Imh0dHA6Ly93d3cuc2VyaWYuY29tLyIgc3R5bGU9ImZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoyOyIgc3Ryb2tlPSIjZmZmZmZmIj4KDTxnIGlkPSJTVkdSZXBvX2JnQ2FycmllciIgc3Ryb2tlLXdpZHRoPSIwIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLDApLCBzY2FsZSgxKSI+Cg08cmVjdCB4PSItMTEuNTIiIHk9Ii0xMS41MiIgd2lkdGg9Ijg3LjA0IiBoZWlnaHQ9Ijg3LjA0IiByeD0iNDMuNTIiIGZpbGw9IiMyMjgyZWYiIHN0cm9rZXdpZHRoPSIwIi8+Cg08L2c+Cg08ZyBpZD0iU1ZHUmVwb190cmFjZXJDYXJyaWVyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KDTxnIGlkPSJTVkdSZXBvX2ljb25DYXJyaWVyIj4gPHJlY3QgaWQ9Ikljb25zIiB4PSItODk2IiB5PSItNjQiIHdpZHRoPSIxMjgwIiBoZWlnaHQ9IjgwMCIgc3R5bGU9ImZpbGw6bm9uZTsiLz4gPGcgaWQ9Ikljb25zMSIgc2VyaWY6aWQ9Ikljb25zIj4gPGcgaWQ9IlN0cmlrZSI+IDwvZz4gPGcgaWQ9IkgxIj4gPC9nPiA8ZyBpZD0iSDIiPiA8L2c+IDxnIGlkPSJIMyI+IDwvZz4gPGcgaWQ9Imxpc3QtdWwiPiA8L2c+IDxnIGlkPSJoYW1idXJnZXItMSI+IDwvZz4gPGcgaWQ9ImhhbWJ1cmdlci0yIj4gPC9nPiA8ZyBpZD0ibGlzdC1vbCI+IDwvZz4gPGcgaWQ9Imxpc3QtdGFzayI+IDwvZz4gPGcgaWQ9InRyYXNoIj4gPC9nPiA8ZyBpZD0idmVydGljYWwtbWVudSI+IDwvZz4gPGcgaWQ9Imhvcml6b250YWwtbWVudSI+IDwvZz4gPGcgaWQ9InNpZGViYXItMiI+IDwvZz4gPGcgaWQ9IlBlbiI+IDwvZz4gPGcgaWQ9IlBlbjEiIHNlcmlmOmlkPSJQZW4iPiA8L2c+IDxnIGlkPSJjbG9jayI+IDwvZz4gPGcgaWQ9ImV4dGVybmFsLWxpbmsiPiA8L2c+IDxnIGlkPSJociI+IDwvZz4gPGcgaWQ9ImluZm8iPiA8L2c+IDxnIGlkPSJ3YXJuaW5nIj4gPC9nPiA8ZyBpZD0icGx1cy1jaXJjbGUiPiA8L2c+IDxnIGlkPSJtaW51cy1jaXJjbGUiPiA8L2c+IDxwYXRoIGlkPSJwbHVzIiBkPSJNMzAuMDM0LDI5Ljk0OGwwLC0yMS45ODNsMy43NDEsMGwwLDIxLjk4M2wyMi4yMDMsMGwwLDMuNzQxbC0yMi4yMDMsMGwwLDIyLjIwM2wtMy43NDEsMGwwLC0yMi4yMDNsLTIyLjAwOCwwbDAsLTMuNzQxbDIyLjAwOCwwWiIvPiA8ZyBpZD0idnVlIj4gPC9nPiA8ZyBpZD0iY29nIj4gPC9nPiA8ZyBpZD0ibG9nbyI+IDwvZz4gPGcgaWQ9InJhZGlvLWNoZWNrIj4gPC9nPiA8ZyBpZD0iZXllLXNsYXNoIj4gPC9nPiA8ZyBpZD0iZXllIj4gPC9nPiA8ZyBpZD0idG9nZ2xlLW9mZiI+IDwvZz4gPGcgaWQ9InNocmVkZGVyIj4gPC9nPiA8ZyBpZD0ic3Bpbm5lci0tbG9hZGluZy0tZG90cy0iIHNlcmlmOmlkPSJzcGlubmVyIFtsb2FkaW5nLCBkb3RzXSI+IDwvZz4gPGcgaWQ9InJlYWN0Ij4gPC9nPiA8ZyBpZD0iY2hlY2stc2VsZWN0ZWQiPiA8L2c+IDxnIGlkPSJ0dXJuLW9mZiI+IDwvZz4gPGcgaWQ9ImNvZGUtYmxvY2siPiA8L2c+IDxnIGlkPSJ1c2VyIj4gPC9nPiA8ZyBpZD0iY29mZmVlLWJlYW4iPiA8L2c+IDxnIGlkPSJjb2ZmZWUtYmVhbnMiPiA8ZyBpZD0iY29mZmVlLWJlYW4xIiBzZXJpZjppZD0iY29mZmVlLWJlYW4iPiA8L2c+IDwvZz4gPGcgaWQ9ImNvZmZlZS1iZWFuLWZpbGxlZCI+IDwvZz4gPGcgaWQ9ImNvZmZlZS1iZWFucy1maWxsZWQiPiA8ZyBpZD0iY29mZmVlLWJlYW4yIiBzZXJpZjppZD0iY29mZmVlLWJlYW4iPiA8L2c+IDwvZz4gPGcgaWQ9ImNsaXBib2FyZCI+IDwvZz4gPGcgaWQ9ImNsaXBib2FyZC1wYXN0ZSI+IDwvZz4gPGcgaWQ9ImNsaXBib2FyZC1jb3B5Ij4gPC9nPiA8ZyBpZD0iTGF5ZXIxIj4gPC9nPiA8L2c+IDwvZz4KDTwvc3ZnPg==");
-    -webkit-mask-size: 100%;
     -webkit-mask-repeat:no-repeat;
     }
 
-.mobile-navbar-action:nth-child(4) .clickable-icon::before { 
-    background-color:var(--color-cyan);
-    width:24px;
-    height:24px;
-    content:"";
-    -webkit-mask-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9Imx1Y2lkZSBsdWNpZGUtY29weSI+PHJlY3Qgd2lkdGg9IjE0IiBoZWlnaHQ9IjE0IiB4PSI4IiB5PSI4IiByeD0iMiIgcnk9IjIiLz48cGF0aCBkPSJNNCAxNmMtMS4xIDAtMi0uOS0yLTJWNGMwLTEuMS45LTIgMi0yaDEwYzEuMSAwIDIgLjkgMiAyIi8+PC9zdmc+");-webkit-mask-position:50%;-webkit-mask-size:100%;-webkit-mask-repeat:no-repeat
+.mobile-navbar-action.has-longpress-menu {
+    margin-right: 10px;
 }
 
-body.is-mobile:not(.hide-tabs-count-off) .mobile-navbar-tabs-action { display:none }
-
-.mobile-navbar-action:nth-child(5) .clickable-icon {
-    color:var(--color-red) !important
+.mobile-navbar-action.has-longpress-menu .navbar-action-flair {
+    display: none;
 }
 
-body.is-mobile .mobile-navbar, body.is-mobile .workspace-drawer .nav-header { 
+.mobile-navbar-tabs-action { 
+    color: var(--color-cyan) !important;
+    border-color: var(--color-cyan) !important;
+    border: solid 1.5px !important;
+}
+
+.mobile-navbar-action-menu .clickable-icon svg {
+    color: var(--color-red) !important;
+}
+
+.mobile-navbar {
+    padding-bottom: 7vw !important;
+}
+
+/*body.is-mobile .mobile-navbar, body.is-mobile .workspace-drawer .nav-header { 
     padding:4px max(var(--safe-area-inset-right),16px) max(4px,var(--safe-area-inset-bottom)) max(var(--safe-area-inset-left),16px);
     width:100%
-    }
+    }*/
 
 
 /* IMAGE VIEWERS */
@@ -1444,7 +1500,7 @@ body:not(.is-mobile) .view-content img:active {
   cursor:zoom-out;
 }
 
-body:not(.is-mobile) .view-content .markdown-preview-view img[referrerpolicy='no-referrer']:active,
+body:not(.is-mobile) .view-content .markdown-preview-view img:active,
 body:not(.is-mobile) .view-content .image-embed:active {
   background:var(--background-primary);
   cursor:zoom-out;

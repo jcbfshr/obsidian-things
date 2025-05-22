@@ -1,6 +1,8 @@
 # Things 3 theme for Obsidian
-Version: 2.2.9
-Updated: 2025-05-16
+Version: 2.3
+Updated: 2025-05-22
+
+**The theme is now compatible with 1.9. Unfortunately due to the changes in 1.9, the navbar on mobiles on previous versions is going to miss the Big Plus button. Looking forward to seeing 1.9 available in public soon. **
 
 This theme is aimed to provide consistent experience to those who use Obsidian together with Things 3. It has been tested on macOS, iPadOS, and iOS only.
 Just my take on Things 3 integration, by providing visual consistency between the two applications. 
@@ -27,6 +29,7 @@ Don't mix it with legendary [Things Theme](https://www.google.com/url?sa=t&sourc
 - Black background for Dark theme on Mobiles
 - Ability to have Tab Close button on the left
 - Custom checkboxes by [Kepano](https://stephango.com)
+- Ability to change mobile navbar to pre-1.9 state (back & forward, search buttons)
 
 ## Integrations
 - [Dataview] No-wrap rows

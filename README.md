@@ -1,5 +1,5 @@
 # Things 3 theme for Obsidian
-Version: 2.3
+Version: 2.3.1
 Updated: 2025-05-22
 
 **The theme is now compatible with 1.9. Unfortunately due to the changes in 1.9, the navbar on mobiles on previous versions is going to miss the Big Plus button. Looking forward to seeing 1.9 available in public soon.**

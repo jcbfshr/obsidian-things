@@ -1,7 +1,7 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 2.3.1
-@paralloid, 2025-05-22
+Version 2.3.2
+@paralloid, 2025-05-23
 ───────────────────────────────────────*/
 
 /* @settings
@@ -1434,11 +1434,11 @@ body.old-navbar .mobile-navbar-action-forward {
     display: flex;
 }
 
-body.old-navbar .mobile-navbar-action-new-tab {
+body.old-navbar .mobile-navbar-action-new {
     display: none;
 }
 
-.mobile-navbar-action-new-tab .clickable-icon svg {
+.mobile-navbar-action-new .clickable-icon svg {
     color: transparent;
     background-color: transparent;
     content:"";
@@ -1451,19 +1451,18 @@ body.old-navbar .mobile-navbar-action-new-tab {
     -webkit-mask-repeat:no-repeat;
     }
 
-.mobile-navbar-action.has-longpress-menu {
-    margin-right: 10px;
-}
 
 .mobile-navbar-action.has-longpress-menu .navbar-action-flair {
     display: none;
 }
 
-.mobile-navbar-tabs-action { 
+.mobile-navbar-action-tabs .mobile-navbar-tabs-number,
+.mobile-navbar-action-tabs .clickable-icon svg { 
     color: var(--color-cyan) !important;
-    border-color: var(--color-cyan) !important;
-    border: solid 1.5px !important;
+/*    border-color: var(--color-cyan) !important;*/
+/*    border: solid 1.5px !important;*/
 }
+
 
 .mobile-navbar-action-menu .clickable-icon svg {
     color: var(--color-red) !important;

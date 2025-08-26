@@ -1,7 +1,7 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 2.3.2
-@paralloid, 2025-05-23
+Version 2.3.3
+@paralloid, 2025-08-26
 ───────────────────────────────────────*/
 
 /* @settings
@@ -40,11 +40,6 @@ settings:
         title: Smooth fade-in for embedded content
         type: class-toggle
         default: true
-    -
-        id: old-navbar
-        title: Switch to the pre-1.9 Mobile navigation bar
-        type: class-toggle
-        default: false
 */
 
 @charset "UTF-8";
@@ -81,6 +76,7 @@ body {
     --titlebar-background-focused: var(--titlebar-background);
     --ribbon-background: var(--titlebar-background);
     --pill-border-width: 1px !important;
+    --interactive-normal: var(--menu-background) !important;
 }
 
 /* DESKTOP DARK MODE COLORS */
@@ -659,10 +655,10 @@ body.is-mobile .menu-item {
     color: #fafbfb;
     outline: none;
     margin: 3px;
+    padding: 5px !important;
     border-radius: 0 !important;
     font-size: 1.1em !important;
 }
-
 
 body.is-mobile .menu-item-icon {
     color: #4f9eff;
@@ -698,16 +694,15 @@ body.is-mobile .menu-item-icon {
 
 .theme-dark .prompt {
     box-shadow: 0 5px 22px rgba(0, 0, 0, 1);
-    background-color: var(--modal-background) !important;
 }
 
-.modal-bg, .mobile-menu-overlay, .mobile-popover {
-    animation: fade-in-modal 0.35s ease-out !important;
-    }
+/*.modal-bg, .mobile-menu-overlay, .mobile-popover {
+    animation: fade-in-modal 0.35s ease-out;
+    }*/
 
 body.is-phone .prompt {
         background-color: var(--modal-background) !important;
-        animation: zoom-in 0.25s var(--anim-motion-jumpy) !important;
+        animation: zoom-in 0.25s var(--anim-motion-jumpy) forwards !important;
         box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5) !important;
         max-width: 90vw !important;
         max-height: 90vw !important;
@@ -718,7 +713,7 @@ body.is-phone .prompt {
 
 body.is-tablet .prompt {
         background-color: var(--modal-background) !important;
-        animation: zoom-in 0.25s var(--anim-motion-jumpy) !important;
+        animation: zoom-in 0.25s var(--anim-motion-jumpy) forwards !important;
         box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5) !important;
         width: 70vw !important;
         max-height: 35em !important;
@@ -819,27 +814,6 @@ input.prompt-input {
     gap: 8px;
 }
 
-/* Add icon to the left of each suggestion item */
-.modal-container .suggestion-item::before {
-    content: '';
-    display: inline-block;
-    margin-left: 0px;
-    padding-left: 0px;
-    padding-right: 20px;
-    width: 0px;
-    height: 24px;
-    margin-right: 8px;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="none" stroke="%23808080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-file"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path></svg>');
-    background-size: auto;
-    background-position: left;
-    background-repeat: no-repeat;
-    animation: fade-in 0.2s;
-}
-
-.modal-container .iconize-modal .suggestion-item::before {
-    display: none !important;
-}
-
 /* Minimal Search Bar */
 
 .search-input-clear-button {
@@ -879,16 +853,16 @@ input.prompt-input {
 
 body.is-phone {
 .nav-folder-title, .nav-file-title {
-    font-size: 1.15em; 
-    padding-left: 25px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    font-size: 1.15em;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    padding-left: 8px !important;
     }
 }
 
-.nav-files-container .tree-item-self .tree-item-icon {
+.nav-files-container .tree-item-self .tree-item-icon:not(.iconic-icon) {
     position: absolute;
-    /* right: 0; */
+    right: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -956,12 +930,6 @@ body.is-phone {
         animation: slide-in 0.16s 
         var(--anim-motion-jumpy);
         transform-origin: bottom right;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .menu, .workspace-leaf, .prompt, .modal-bg, .mobile-tab-switcher {
-        animation: none !important;
     }
 }
 
@@ -1180,21 +1148,14 @@ h6, .markdown-preview-view h6,
 /* Paragraphs, checkboxes, and Lists */
 /* ================================= */
 
+.markdown-rendered p,
 .markdown-preview-view p {
     margin-top: 0px;
     margin-bottom: 1.5em;
 }
 
-.markdown-rendered p {
-    margin-top: 0px;
-    margin-bottom: 1.5em;
-}
+.markdown-rendered ol,
 .markdown-rendered ul {
-    margin-block-start: 0em;
-    margin-block-end: 1.5em;
-}
-
-.markdown-rendered ol {
     margin-block-start: 0em;
     margin-block-end: 1.5em;
 }
@@ -1424,21 +1385,17 @@ body.is-tablet .workspace-tab-header-container {
     padding-bottom: 0px;
 }
 
-body.is-mobile .workspace-leaf-content .nav-header {
-    order: 2;
-}
-
 /* Mobile bottom bar icons */
 
-body.old-navbar .mobile-navbar-action-forward {
+.mobile-navbar-action-forward {
     display: flex;
 }
 
-body.old-navbar .mobile-navbar-action-new {
+.mobile-navbar-action-quick-switcher {
     display: none;
 }
 
-.mobile-navbar-action-new .clickable-icon svg {
+/*.mobile-navbar-action-new .clickable-icon svg {
     color: transparent;
     background-color: transparent;
     content:"";
@@ -1449,7 +1406,7 @@ body.old-navbar .mobile-navbar-action-new {
     -webkit-mask-size: 100% 100%;
     background-image:url("data:image/svg+xml;base64,PCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KDTwhLS0gVXBsb2FkZWQgdG86IFNWRyBSZXBvLCB3d3cuc3ZncmVwby5jb20sIFRyYW5zZm9ybWVkIGJ5OiBTVkcgUmVwbyBNaXhlciBUb29scyAtLT4KPHN2ZyBmaWxsPSIjZmZmZmZmIiB3aWR0aD0iMjU2cHgiIGhlaWdodD0iMjU2cHgiIHZpZXdCb3g9Ii0xMS41MiAtMTEuNTIgODcuMDQgODcuMDQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM6c2VyaWY9Imh0dHA6Ly93d3cuc2VyaWYuY29tLyIgc3R5bGU9ImZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoyOyIgc3Ryb2tlPSIjZmZmZmZmIj4KDTxnIGlkPSJTVkdSZXBvX2JnQ2FycmllciIgc3Ryb2tlLXdpZHRoPSIwIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLDApLCBzY2FsZSgxKSI+Cg08cmVjdCB4PSItMTEuNTIiIHk9Ii0xMS41MiIgd2lkdGg9Ijg3LjA0IiBoZWlnaHQ9Ijg3LjA0IiByeD0iNDMuNTIiIGZpbGw9IiMyMjgyZWYiIHN0cm9rZXdpZHRoPSIwIi8+Cg08L2c+Cg08ZyBpZD0iU1ZHUmVwb190cmFjZXJDYXJyaWVyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KDTxnIGlkPSJTVkdSZXBvX2ljb25DYXJyaWVyIj4gPHJlY3QgaWQ9Ikljb25zIiB4PSItODk2IiB5PSItNjQiIHdpZHRoPSIxMjgwIiBoZWlnaHQ9IjgwMCIgc3R5bGU9ImZpbGw6bm9uZTsiLz4gPGcgaWQ9Ikljb25zMSIgc2VyaWY6aWQ9Ikljb25zIj4gPGcgaWQ9IlN0cmlrZSI+IDwvZz4gPGcgaWQ9IkgxIj4gPC9nPiA8ZyBpZD0iSDIiPiA8L2c+IDxnIGlkPSJIMyI+IDwvZz4gPGcgaWQ9Imxpc3QtdWwiPiA8L2c+IDxnIGlkPSJoYW1idXJnZXItMSI+IDwvZz4gPGcgaWQ9ImhhbWJ1cmdlci0yIj4gPC9nPiA8ZyBpZD0ibGlzdC1vbCI+IDwvZz4gPGcgaWQ9Imxpc3QtdGFzayI+IDwvZz4gPGcgaWQ9InRyYXNoIj4gPC9nPiA8ZyBpZD0idmVydGljYWwtbWVudSI+IDwvZz4gPGcgaWQ9Imhvcml6b250YWwtbWVudSI+IDwvZz4gPGcgaWQ9InNpZGViYXItMiI+IDwvZz4gPGcgaWQ9IlBlbiI+IDwvZz4gPGcgaWQ9IlBlbjEiIHNlcmlmOmlkPSJQZW4iPiA8L2c+IDxnIGlkPSJjbG9jayI+IDwvZz4gPGcgaWQ9ImV4dGVybmFsLWxpbmsiPiA8L2c+IDxnIGlkPSJociI+IDwvZz4gPGcgaWQ9ImluZm8iPiA8L2c+IDxnIGlkPSJ3YXJuaW5nIj4gPC9nPiA8ZyBpZD0icGx1cy1jaXJjbGUiPiA8L2c+IDxnIGlkPSJtaW51cy1jaXJjbGUiPiA8L2c+IDxwYXRoIGlkPSJwbHVzIiBkPSJNMzAuMDM0LDI5Ljk0OGwwLC0yMS45ODNsMy43NDEsMGwwLDIxLjk4M2wyMi4yMDMsMGwwLDMuNzQxbC0yMi4yMDMsMGwwLDIyLjIwM2wtMy43NDEsMGwwLC0yMi4yMDNsLTIyLjAwOCwwbDAsLTMuNzQxbDIyLjAwOCwwWiIvPiA8ZyBpZD0idnVlIj4gPC9nPiA8ZyBpZD0iY29nIj4gPC9nPiA8ZyBpZD0ibG9nbyI+IDwvZz4gPGcgaWQ9InJhZGlvLWNoZWNrIj4gPC9nPiA8ZyBpZD0iZXllLXNsYXNoIj4gPC9nPiA8ZyBpZD0iZXllIj4gPC9nPiA8ZyBpZD0idG9nZ2xlLW9mZiI+IDwvZz4gPGcgaWQ9InNocmVkZGVyIj4gPC9nPiA8ZyBpZD0ic3Bpbm5lci0tbG9hZGluZy0tZG90cy0iIHNlcmlmOmlkPSJzcGlubmVyIFtsb2FkaW5nLCBkb3RzXSI+IDwvZz4gPGcgaWQ9InJlYWN0Ij4gPC9nPiA8ZyBpZD0iY2hlY2stc2VsZWN0ZWQiPiA8L2c+IDxnIGlkPSJ0dXJuLW9mZiI+IDwvZz4gPGcgaWQ9ImNvZGUtYmxvY2siPiA8L2c+IDxnIGlkPSJ1c2VyIj4gPC9nPiA8ZyBpZD0iY29mZmVlLWJlYW4iPiA8L2c+IDxnIGlkPSJjb2ZmZWUtYmVhbnMiPiA8ZyBpZD0iY29mZmVlLWJlYW4xIiBzZXJpZjppZD0iY29mZmVlLWJlYW4iPiA8L2c+IDwvZz4gPGcgaWQ9ImNvZmZlZS1iZWFuLWZpbGxlZCI+IDwvZz4gPGcgaWQ9ImNvZmZlZS1iZWFucy1maWxsZWQiPiA8ZyBpZD0iY29mZmVlLWJlYW4yIiBzZXJpZjppZD0iY29mZmVlLWJlYW4iPiA8L2c+IDwvZz4gPGcgaWQ9ImNsaXBib2FyZCI+IDwvZz4gPGcgaWQ9ImNsaXBib2FyZC1wYXN0ZSI+IDwvZz4gPGcgaWQ9ImNsaXBib2FyZC1jb3B5Ij4gPC9nPiA8ZyBpZD0iTGF5ZXIxIj4gPC9nPiA8L2c+IDwvZz4KDTwvc3ZnPg==");
     -webkit-mask-repeat:no-repeat;
-    }
+    }*/
 
 
 .mobile-navbar-action.has-longpress-menu .navbar-action-flair {

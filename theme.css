@@ -900,7 +900,7 @@ body.is-phone {
     color: var(--text-extreme) !important;
 }
 
-body.smooth-animation .nav-folder-children {
+body.smooth-animations .nav-folder-children {
     animation: fade-in 0.4s ease-out;
     border-left: none;
 }
@@ -2014,7 +2014,7 @@ body {
     color: var(--color-red) !important;
 }
 
-body.smooth-animation .iconize-icon {
+body.smooth-animations .iconize-icon {
     margin: 0px 6px 0px 0px !important;
     animation: fade-in 0.2s ease-in !important;
 }

@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 2.3.5
+Version 2.3.6
 @paralloid, 2025-09-02
 ───────────────────────────────────────*/
 
@@ -12,7 +12,7 @@ settings:
 
     -
         id: mobile-full-black
-        title: Use Fully Black Backgrounds on Mobiles
+        title: Use Fully Black Backgrounds on Phones
         type: class-toggle
         default: true
     -
@@ -27,7 +27,7 @@ settings:
         default: true
     - 
         id: dataview-style
-        title: Enable or disable Tables & Dataview styling
+        title: Enable Tables & Dataview styling
         type: class-toggle
         default: true
     -
@@ -37,7 +37,7 @@ settings:
         default: false
     -
         id: smooth-animations 
-        title: Smooth fade-in for embedded content
+        title: Smooth fade-in for icons and embedded content
         type: class-toggle
         default: true
 */
@@ -900,7 +900,7 @@ body.is-phone {
     color: var(--text-extreme) !important;
 }
 
-.nav-folder-children {
+body.smooth-animation .nav-folder-children {
     animation: fade-in 0.4s ease-out;
     border-left: none;
 }
@@ -921,17 +921,17 @@ body.is-phone {
 
 /* Remove hover / tapping visuals */
 
-body.is-phone .nav-file-title:hover,
-body.is-phone .nav-folder-title:hover,
-body.is-phone .menu-item:hover,
-body.is-phone .prompt-results:hover,
-body.is-phone .suggestion-item:hover,
-body.is-phone .suggestion-content:hover,
-body.is-phone .mobile-tap:hover,
-body.is-phone .nav-file-title:active,
-body.is-phone .nav-folder-title:active,
-body.is-phone .nav-file-title.is-active,
-body.is-phone .nav-folder-title.is-active {
+body.is-mobile .nav-file-title:hover,
+body.is-mobile .nav-folder-title:hover,
+body.is-mobile .menu-item:hover,
+body.is-mobile .prompt-results:hover,
+body.is-mobile .suggestion-item:hover,
+body.is-mobile .suggestion-content:hover,
+body.is-mobile .mobile-tap:hover,
+body.is-mobile .nav-file-title:active,
+body.is-mobile .nav-folder-title:active,
+body.is-mobile .nav-file-title.is-active,
+body.is-mobile .nav-folder-title.is-active {
     background-color: transparent !important;
     box-shadow: none !important;
 }
@@ -2014,7 +2014,7 @@ body {
     color: var(--color-red) !important;
 }
 
-.iconize-icon {
+body.smooth-animation .iconize-icon {
     margin: 0px 6px 0px 0px !important;
     animation: fade-in 0.2s ease-in !important;
 }
@@ -2026,7 +2026,7 @@ body:not(.is-mobile) .iconic-icon {
 }
 
 body.is-mobile .iconic-icon {
-  transform: scale(1.2) !important;
+  transform: scale(1.2);
 }
 
 .iconic-item > .tree-item-self > .tree-item-inner {
@@ -2035,6 +2035,9 @@ body.is-mobile .iconic-icon {
 
 .iconic-icon svg {
     stroke-width: 1.3 !important;
+}
+
+body.smooth-animations .iconic-icon {
     animation: fade-in 0.1s;
 }
 
@@ -2045,7 +2048,7 @@ body.is-mobile .iconic-icon {
 .side-dock-actions .iconic-icon,
 .mobile-navbar .iconic-icon,
 .mobile-navbar-action .iconic-icon {
-  transform: none !important;
+    transform: none !important;
 }
 
 /* CALENDAR PLUGIN */

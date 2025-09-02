@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 2.3.4
+Version 2.3.5
 @paralloid, 2025-09-02
 ───────────────────────────────────────*/
 
@@ -77,6 +77,8 @@ body {
     --ribbon-background: var(--titlebar-background);
     --pill-border-width: 1px !important;
     --interactive-normal: var(--menu-background) !important;
+    --input-shadow: none;
+    --input-shadow-hover: none;
 }
 
 /* DESKTOP DARK MODE COLORS */
@@ -729,7 +731,7 @@ body.is-tablet .prompt {
     transform-origin: top center;
 }
 
-.setting-item-control input[type="color"] {
+.mod-settings .setting-item-control input[type="color"] {
     display: none;
 }
 
@@ -1072,7 +1074,7 @@ mark .external-link,
 }
 
 .more-options-icon {
-display: none;
+    display: none;
 }
 
 
@@ -1319,6 +1321,10 @@ body.dataview-style .dataview.task-list-basic-item:hover {
 
 .dataview {
     transition: none !important;
+}
+
+body.smooth-animations .dataview {
+    animation: fade-in 0.2s;
 }
 
 body.dataview-style .dataview.task-list-item:hover,

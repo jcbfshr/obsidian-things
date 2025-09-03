@@ -1,7 +1,7 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 2.3.6
-@paralloid, 2025-09-02
+Version 2.3.7
+@paralloid, 2025-09-03
 ───────────────────────────────────────*/
 
 /* @settings
@@ -12,12 +12,12 @@ settings:
 
     -
         id: mobile-full-black
-        title: Use Fully Black Backgrounds on Phones
+        title: Use fully black background on Phones
         type: class-toggle
         default: true
     -
         id: tablet-full-black
-        title: Use Fully Black Background on Tablets
+        title: Use fully black background on Tablets
         type: class-toggle
         default: true
     - 
@@ -589,6 +589,11 @@ src: url('data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAXMAA4AAAAACOAAAAAAAA
     padding-bottom: 2px;
 }
 
+.metadata-property:not([data-property-key="tags"]) .multi-select-pill:hover,
+.metadata-property:not([data-property-key="tags"]) .multi-select-pill {
+    padding-left: 7px;
+}
+
 .theme-dark .metadata-property:is([data-property-key="tags"]) .multi-select-pill {
     color: #f1f1f1 !important;
     font-weight: 500;
@@ -835,7 +840,7 @@ input.prompt-input {
 
 /* File Tree */
 
-.nav-files-container {
+.nav-files-container:has(.iconic-icon) {
     box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.01);
     margin-left: 15px;
 }

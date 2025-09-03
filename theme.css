@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 2.3.7
+Version 2.3.8
 @paralloid, 2025-09-03
 ───────────────────────────────────────*/
 
@@ -77,8 +77,8 @@ body {
     --ribbon-background: var(--titlebar-background);
     --pill-border-width: 1px !important;
     --interactive-normal: var(--menu-background) !important;
-    --input-shadow: none;
-    --input-shadow-hover: none;
+    --input-shadow: none !important;
+    --input-shadow-hover: none !important;
 }
 
 /* DESKTOP DARK MODE COLORS */

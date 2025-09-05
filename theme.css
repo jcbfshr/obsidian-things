@@ -1,7 +1,7 @@
 /*──────────────────────────────────────
 Things 3 Theme for Obsidian
-Version 2.3.8
-@paralloid, 2025-09-03
+Version 2.3.9
+@paralloid, 2025-09-05
 ───────────────────────────────────────*/
 
 /* @settings
@@ -649,7 +649,7 @@ body.is-mobile .menu {
     position: fixed;
     margin: auto;
     overflow: auto;
-    margin-right: 20px 20px;
+    margin-right: 18px 18px;
     max-width: 320px;
     border-radius: 12px;
     box-shadow: 0 0px 10px rgba(0, 0, 0, 0.4);
@@ -659,14 +659,17 @@ body.is-mobile .menu {
 body.is-mobile .menu-item {
     color: #fafbfb;
     outline: none;
-    padding-top: 12px !important;
-    padding-bottom: 12px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
     border-radius: 0 !important;
     font-size: 1.1em !important;
 }
 
 body.is-mobile .menu-item-icon {
     color: #4f9eff;
+    order: 0 !important;
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1366px) {
@@ -1088,6 +1091,7 @@ mark .external-link,
 /* ====================== */
 h1, .markdown-preview-view h1,
 .HyperMD-header-1 {
+    font-size: 1.75em;
     font-weight: 600 !important;
     margin-top: 0px !important;
     margin-bottom: 0.85em !important;
@@ -1096,21 +1100,23 @@ h1, .markdown-preview-view h1,
 
 h2, .markdown-preview-view h2,
 .HyperMD-header-2 {
+    font-size: 1.5em;
     font-weight: 600 !important;
-    margin-top: 1rem !important;
-    margin-bottom: 0.9em !important;
-    padding-top: 10px !important;
-    padding-bottom: 0.25rem !important;
+    margin-top: 1em !important;
+    margin-bottom: 1em !important;
+    padding-top: 0.33em !important;
+    padding-bottom: 0.33em !important;
     border-bottom: 1px solid var(--div-color); 
 }
 
 h3, .markdown-preview-view h3,
 .HyperMD-header-3 {
+    font-size: 1.25em;
     font-weight: 600 !important;
     margin-top: 0px !important;
-    margin-bottom: 0.9em !important;
-    padding-top: 0.35em !important;
-    padding-bottom: 0.25em !important;
+    margin-bottom: 1em !important;
+    padding-top: 1em !important;
+    padding-bottom: 0.33em !important;
 }
 
 h4, .markdown-preview-view h4,

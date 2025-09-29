@@ -71,7 +71,7 @@ body {
     --icon-stroke: 1.5px !important;
     --icon-l-stroke-width: 1.5px !important;
     --embed-padding: 0px;
-    --menu-background: #2c3137;
+    --menu-background: var(--background-secondary);
     --tab-container-background: var(--background-secondary);
     --titlebar-background-focused: var(--titlebar-background);
     --ribbon-background: var(--titlebar-background);
@@ -92,8 +92,10 @@ body {
     --background-primary-alt: #2f2f2f;
     --background-secondary: #1f1f1f;
     --checkbox-border-color: var(--div-color);
+    --menu-background: #2c3137;
     --titlebar-background-focused: #1c1c1c;
     --titlebar-background: #1c1c1c;
+    --interactive-normal: var(--menu-background) !important;
     --text-on-accent: #1f1f1f;
     --text-extreme: #ffffff;
     --div-color: rgba(70, 70, 70, 0.9);

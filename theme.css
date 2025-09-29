@@ -2024,7 +2024,7 @@ body {
 }
 
 .theme-light .iconize-icon {
-    color: var(--color-red) !important;
+    color: var(--color-blue) !important;
 }
 
 body.smooth-animations .iconize-icon {
